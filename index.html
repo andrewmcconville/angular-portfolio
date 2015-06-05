@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="portfolio">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Andrew McConville</title>
+
+    <style>*{box-sizing:border-box;}body{margin:0;}a,button,input,select{outline:0;padding:0;}iframe,h1,h2,h3,h4,h5,h6,p,blockquote,a,abbr,acronym,address,cite,em,img,strong,sub,sup,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,figure,figcaption,footer,header,menu,nav,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}ol,ul{list-style:none}blockquote{quotes:none}blockquote:before,blockquote:after{content:none}table{border-collapse:collapse;border-spacing:0}</style>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="shared/css/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="shared/css/libs/perfect-scrollbar.min.css" /> -->
+</head>
+
+<body id="js-body" ng-controller="appCtrl">
+    <header class="app-header">
+        <div class="toolbar">
+            Andrew McConville
+        </div>
+        <div class="tabs" ng-init="activeTab = 0">
+            <button class="button" ng-class="{active: activeTab == 0}" ng-click="activeTab = 0">Interfaces</button>
+            <button class="button" ng-class="{active: activeTab == 1}" ng-click="activeTab = 1">Infographics</button>
+            <button class="button" ng-class="{active: activeTab == 2}" ng-click="activeTab = 2">Resume</button>
+        </div>
+    </header>
+
+    <section class="work-list">
+        <div id="js-bricks" masonry='{ "transitionDuration" : "0.320s" , "itemSelector" : ".work"}'>
+            <div class="work" masonry-tile ng-repeat="work in works">
+                <div class="work-poster-container">
+                    <img class="work-poster" ng-src="{{work.poster.src}}" height="{{work.poster.height/2}}" width="{{work.poster.width/2}}" />
+                </div>
+                <p class="work-name">{{work.name}}</p>
+                <p class="work-excerpt">{{work.excerpt}}</p>
+            </div>
+        </div>
+        <div class="end-of-list-message">
+            <p>This is the end, email me!</p>
+        </div>
+    </section>
+
+    <article id="js-work-details" class="work-details">
+        <div class="work-details-background"></div>
+        <div class="work-details-inner">
+            Work Details
+        </div>
+    </article>
+
+    <script src="shared/js/libs/angular.min.js"></script>
+    <script src="shared/js/libs/angular-ui-router.min.js"></script>
+    <script src="shared/js/libs/angular-animate.min.js"></script>
+    <script src="shared/js/libs/masonry.pkgd.min.js"></script>
+    <script src="shared/js/libs/angular-masonry-directive.js"></script>
+    <!--<script src="shared/js/libs/snap.js"></script>-->
+    <script src="shared/js/libs/fastclick.js"></script>
+    <script src="shared/js/libs/perfect-scrollbar.min.js"></script>
+    <script src="shared/js/app.js"></script>
+    <script>
+        if('addEventListener' in document){
+            document.addEventListener('DOMContentLoaded', function(){
+                FastClick.attach(document.body);
+            }, false);
+        }
+
+        function isMobile(){ 
+            if( navigator.userAgent.match(/Android/i)
+             || navigator.userAgent.match(/webOS/i)
+             || navigator.userAgent.match(/iPhone/i)
+             || navigator.userAgent.match(/iPad/i)
+             || navigator.userAgent.match(/iPod/i)
+             || navigator.userAgent.match(/BlackBerry/i)
+             || navigator.userAgent.match(/Windows Phone/i)){
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        if(isMobile()){
+            //do not use perfect scrollbar on touch devices
+        } else {
+            var workDetails = document.getElementById('js-work-details');
+            workDetails.style.overflow = "hidden";
+            Ps.initialize(workDetails, {});
+
+            //var browserBody = document.getElementById('js-body');
+            //browserBody.style.overflow = "hidden";
+            //Ps.initialize(browserBody, {});
+        }
+    </script>
+</body>
+</html>

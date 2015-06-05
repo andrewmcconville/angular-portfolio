@@ -1,0 +1,25 @@
+body {
+	color: $font-primary;
+	font-family: 'Roboto', sans-serif;
+}
+
+.font-headline {
+	font-size: 46px;
+	font-weight: 300;
+}
+
+.font-title {
+	color: $font-primary;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.font-caption {
+	color: $font-secondary;
+	font-size: 12px;
+}
+
+.font-faint {
+	font-weight: 300;
+	opacity: .75;
+}

@@ -1,0 +1,96 @@
+@import 'shadows';
+
+button,
+.button {
+	appearance: none;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 14px;
+	padding: 12px 20px 12px 20px;
+	text-transform: uppercase;
+	transition: background-color 150ms;
+
+	&:hover,
+	&:active {
+		transition: background-color 150ms;
+	}
+}
+
+.button-fab {
+	background-color: $pink-600;
+	border-radius: 100%;
+	bottom: 16px;
+	box-shadow: $shadow-z-2;
+	height: 60px;
+	padding: 0;
+	position: fixed;
+	transition: all 160ms ease-out;
+	width: 60px;
+	z-index: 5;
+
+	&.ng-hide-add {
+		opacity: 1;
+		transform: scale3d(1, 1, 1) rotate(0);
+	}
+
+	&.ng-hide-add-active {
+		opacity: 0;
+		transform: scale3d(0, 0, 1) rotate(180deg);
+	}
+
+	&.ng-hide-remove {
+		opacity: 0;
+		transform: scale3d(0, 0, 1) rotate(-180deg);;
+	}
+
+	&.ng-hide-remove-active {
+		opacity: 1;
+		transform: scale3d(1, 1, 1) rotate(0);
+	}
+
+	&.searching {
+		opacity: .25;
+	}
+
+	.plus {
+		transition: all 75ms;
+
+		&.close {
+			transform: rotate(45deg);
+		}
+	}
+
+	&.fab-add-job {
+		left: 396px;
+	}
+
+	&.fab-job-actions {
+		left: 910px;
+	}
+}
+
+.button-primary {
+	background-color: $pink-600;
+	box-shadow: $shadow-z-2;
+	color: #fff;
+
+	&:hover { background-color: $pink-500; }
+	&:active { background-color: $pink-400; }
+}
+
+.button-link {
+	display: inline-block;
+	height: 28px;
+	min-width: 100px;
+	opacity: .5;
+	padding: 7px;
+	text-align: center;
+
+	&:hover {
+		background-color: #000;
+		opacity: 1;
+	}
+}

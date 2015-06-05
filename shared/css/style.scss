@@ -1,0 +1,38 @@
+//globals
+@import 'colors';
+@import 'buttons';
+@import 'typography';
+@import 'shadows';
+
+//components
+@import 'header';
+@import 'work-details';
+@import 'work-list';
+@import 'tabs';
+
+html {
+	-webkit-tap-highlight-color: transparent;
+}
+
+body {
+	background-color: $grey-100;
+}
+
+img {
+	display: block;
+}
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.ps-scrollbar-x-rail,
+.ps-scrollbar-y-rail {
+	display: none;
+}
