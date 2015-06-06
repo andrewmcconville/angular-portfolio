@@ -1,5 +1,6 @@
 .work-details {
 	bottom: 0;
+	display: none;
 	left: 0;
 	padding: 54px 7px 0 10px;
 	position: fixed;
@@ -9,6 +10,7 @@
 	z-index: 3;
 
 	@media(min-width: 888px) {
+		display: block;
 		left: 350px;
 	}
 

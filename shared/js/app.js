@@ -1,4 +1,4 @@
-var app = angular.module('portfolio', ['ui.router', 'ngAnimate', 'masonry']);
+var app = angular.module('portfolio', ['ui.router', 'ngAnimate', 'wu.masonry', 'snap']);
 
 app.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider){
 	//routes if i have time

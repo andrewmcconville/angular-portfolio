@@ -1,3 +1,4 @@
+@import url(libs/angular-snap.css);
 button,
 .button {
   appearance: none;
@@ -144,6 +145,7 @@ body {
 
 .work-details {
   bottom: 0;
+  display: none;
   left: 0;
   padding: 54px 7px 0 10px;
   position: fixed;
@@ -154,6 +156,7 @@ body {
   z-index: 3; }
   @media (min-width: 888px) {
     .work-details {
+      display: block;
       left: 350px; } }
   .work-details.ng-hide-add {
     opacity: 1; }
@@ -193,9 +196,15 @@ body {
   top: 54px;
   z-index: 0; }
 
+.card {
+  height: 50px;
+  width: 200px; }
+  .card .content {
+    background-color: #fff; }
+
 .work-list {
   margin: auto;
-  padding: 110px 4px 10px 4px;
+  padding: 108px 4px 10px 4px;
   width: 320px; }
   @media (min-width: 360px) {
     .work-list {
@@ -222,12 +231,6 @@ body {
       border-bottom: none; }
     .work-list .work.active {
       background-color: #FAFAFA; }
-      .work-list .work.active .mark {
-        -webkit-transform: scale3d(1, 1, 1);
-                transform: scale3d(1, 1, 1); }
-      .work-list .work.active .sliding-content {
-        -webkit-transform: translate3d(8px, 0, 0);
-                transform: translate3d(8px, 0, 0); }
   .work-list .work-poster-container {
     overflow: hidden; }
   .work-list .work-poster {
@@ -243,7 +246,7 @@ body {
     font-size: 12px;
     font-weight: 300;
     line-height: 14px;
-    padding: 2px 8px 8px 8px; }
+    padding: 2px 8px 12px 8px; }
   .work-list .end-of-list-message {
     color: rgba(0, 0, 0, 0.5);
     margin: auto;
@@ -265,8 +268,13 @@ body {
     font-weight: 500;
     padding: 18px 0 10px 0;
     -webkit-transition: all 150ms;
-            transition: all 150ms;
-    width: 33.333%; }
+            transition: all 150ms; }
+    .tabs .button:nth-child(1) {
+      width: 25%; }
+    .tabs .button:nth-child(2) {
+      width: 35%; }
+    .tabs .button:nth-child(3) {
+      width: 40%; }
     .tabs .button:hover {
       border-bottom-color: #303F9F; }
     .tabs .button.active {

@@ -1,6 +1,15 @@
+.card {
+	height: 50px;
+	width: 200px;
+
+	.content {
+		background-color: #fff;
+	}
+}
+
 .work-list {
 	margin: auto;
-	padding: 110px 4px 10px 4px;
+	padding: 108px 4px 10px 4px;
 	width: 320px;
 
 	@media(min-width: 360px) { width: 360px; }
@@ -25,12 +34,6 @@
 
 		&.active {
 			background-color: $grey-50;
-
-			.mark {
-				transform: scale3d(1, 1, 1);
-			}
-
-			.sliding-content { transform: translate3d(8px, 0, 0); }
 		}
 	}
 
@@ -55,7 +58,7 @@
 		font-size: 12px;
 		font-weight: 300;
 		line-height: 14px;
-		padding: 2px 8px 8px 8px;
+		padding: 2px 8px 12px 8px;
 	}
 
 	.end-of-list-message {

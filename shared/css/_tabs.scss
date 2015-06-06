@@ -9,14 +9,12 @@
 		font-weight: 500;
 		padding: 18px 0 10px 0;
 		transition: all 150ms;
-		width: 33.333%;
 
-		&:hover {
-			border-bottom-color: $indigo-700;
-		}
+		&:nth-child(1) { width: 25%; } 
+		&:nth-child(2) { width: 35%; }
+		&:nth-child(3) { width: 40%; }
 
-		&.active {
-			border-bottom-color: $indigo-900;
-		}
+		&:hover { border-bottom-color: $indigo-700; }
+		&.active { border-bottom-color: $indigo-900; }
 	}
 }
