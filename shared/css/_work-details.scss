@@ -1,17 +1,18 @@
 .work-details {
-	bottom: 0;
-	display: none;
 	left: 0;
-	padding: 54px 7px 0 10px;
-	position: fixed;
+	padding: 54px 0 0 0;
+	position: absolute;
 	right: 0;
 	top: 0;
 	transition: opacity 160ms ease-out;
 	z-index: 3;
 
 	@media(min-width: 888px) {
+		bottom: 0;
 		display: block;
 		left: 350px;
+		padding: 54px 7px 0 10px;
+		position: fixed;
 	}
 
 	&.ng-hide-add { opacity: 1; }
@@ -19,36 +20,92 @@
 	&.ng-hide-remove { opacity: 0; }
 	&.ng-hide-remove-active { opacity: 1; }
 
-	.work-header {
-		background-color: #666;
-		color: #fff;
-		padding: 32px 36px 24px 36px;
+	.work-details-background,
+	.work-details-inner {
+		background-color: #fff;
+		max-width: 940px;
+		min-height: 100%;
+	}
+
+	.work-details-background {
+		left: 8px;
+		position: absolute;
+		right: 8px;
+		top: 54px;
+		z-index: 0;
+
+		@media(min-width: 888px) {
+			left: 10px;
+		}
+	}
+
+	.work-details-inner {
+		box-shadow: $shadow-z-3;
+		overflow: hidden;
 		position: relative;
-		transition: background-color 160ms ease-out 160ms;
-		z-index: 2;
+		transition: opacity 160ms;
+		z-index: 1;
+	}
+
+	.work-header {
+		box-shadow: $shadow-z-2;
+		padding: 32px;
+		position: relative;
+	}
+
+	.header-background {
+		background-position: center center;
+		background-size: cover;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 0;
+	}
+
+	.header-foreground {
+		position: relative;
+		z-index: 1;
+	}
+
+	.detail-toolbar {
+		position: absolute;
+		right: 16px;
+		top: 16px;
 	}
 
 	.font-headline {
-		margin-bottom: 16px;
+		text-shadow: 0 0 24px rgba(255, 255, 255, 1);
 	}
-}
 
-.work-details-inner {
-	background-color: #fff;
-	box-shadow: $shadow-z-3;
-	min-height: 100%;
-	padding-bottom: 80px;
-	position: relative;
-	transition: opacity 160ms;
-	z-index: 1;
-}
+	.font-subheadline {
+		font-size: 18px;
+	}
 
-.job-details-background {
-	background-color: $grey-100;
-	height: 100%;
-	left: 8px;
-	position: absolute;
-	right: 8px;
-	top: 54px;
-	z-index: 0;
+	.font-subheadline,
+	.time {
+		color: rgba(0, 0, 0, .5);
+		line-height: 16px;
+		text-shadow: 0 0 12px rgba(255, 255, 255, .5);
+	}
+
+	.work-body {
+		padding: 32px 32px 96px 32px;		
+	}
+
+	.work-figure {
+		margin-bottom: 32px;
+	}
+
+	.work-image {
+		float: left;
+		max-width: 750px;
+		width: 100%;
+	}
+
+	.image-caption {
+		float: right;
+		width: 100px;
+	}
 }

@@ -7,12 +7,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Andrew McConville</title>
 
-    <style>*{box-sizing:border-box;}body{margin:0;}a,button,input,select{outline:0;padding:0;}iframe,h1,h2,h3,h4,h5,h6,p,blockquote,a,abbr,acronym,address,cite,em,img,strong,sub,sup,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,figure,figcaption,footer,header,menu,nav,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}ol,ul{list-style:none}blockquote{quotes:none}blockquote:before,blockquote:after{content:none}table{border-collapse:collapse;border-spacing:0}</style>
+    <style>*{box-sizing:border-box;}body{margin:0;}a,button{outline:0;padding:0;}h1,h2,h3,h4,h5,h6,p,a,img,article,aside,figure,figcaption,footer,header,menu,nav,section,summary,time{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block}ol,ul{list-style:none}</style>
 
-    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600,700' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" type="text/css" href="shared/css/style.css">
-    <!-- <link rel="stylesheet" type="text/css" href="shared/css/libs/perfect-scrollbar.min.css" /> -->
 </head>
 
 <body id="js-body" ng-controller="appCtrl">
@@ -20,18 +19,18 @@
         <div class="toolbar">
             Andrew McConville
         </div>
-        <div class="tabs" ng-init="activeTab = 0">
+        <nav class="tabs" ng-init="activeTab = 0">
             <button class="button" ng-class="{active: activeTab == 0}" ng-click="activeTab = 0">About</button>
             <button class="button" ng-class="{active: activeTab == 1}" ng-click="activeTab = 1">Interfaces</button>
             <button class="button" ng-class="{active: activeTab == 2}" ng-click="activeTab = 2">Infographics</button>
-        </div>
+        </nav>
     </header>
 
-    <section class="work-list">
+    <section class="work-list" ng-show="selected.current < 0">
         <div masonry id="js-bricks" load-images="false" preserve-order="true" reload-on-show="true" masonry-options='{"transitionDuration": "0.320s"}'>
-            <div class="work masonry-brick" masonry-tile ng-repeat="work in works">
+            <div class="work masonry-brick" masonry-tile ng-repeat="work in works" ng-click="selected.current = $index;">
                 <div class="work-poster-container">
-                    <img class="work-poster" ng-src="{{work.poster.src}}" height="{{work.poster.height/2}}" width="{{work.poster.width/2}}" />
+                    <img class="work-poster" ng-src="wp-content/uploads/{{work.poster.src}}-thumbnail.png" height="{{work.poster.height/2}}" width="170" />
                 </div>
                 <p class="work-name">{{work.name}}</p>
                 <p class="work-excerpt">{{work.excerpt}}</p>
@@ -42,31 +41,39 @@
         </div>
     </section>
 
-    <article id="js-work-details" class="work-details">
+    <article id="js-work-details" class="work-details" ng-show="selected.current >= 0">
         <div class="work-details-background"></div>
         <div class="work-details-inner">
-            Work Details
-
-            <div class="card">
-                <snap-drawer class="drawer">
-                    stuff
-                </snap-drawer>
-
-                <snap-content class="content" snap-options="{disable: 'left', minPosition: -100}">
-                    minPosition 100px
-                </snap-content>
-            </div>
+            <header class="work-header">
+                <div class="header-background" style="background-image: url(wp-content/uploads/{{works[selected.current].blur}}-blur.jpg)"></div>
+                <div class="header-foreground">
+                    <div class="detail-toolbar">
+                        <button class="button button-prev" ng-click="selected.current = selected.current - 1">&lt;</button>
+                        <button class="button button-next" ng-click="selected.current = selected.current + 1">&gt;</button>
+                        <button class="button button-close" ng-click="selected.current = -1">X</button>
+                    </div>
+                    <h1 class="font-headline">{{works[selected.current].name}}</h1>
+                    <h2 class="font-subheadline">{{works[selected.current].excerpt}}</h2>
+                    <time class="time">{{works[selected.current].date | date:'MMMM d, yyyy'}}</time>
+                </div>
+            </header>
+            <section class="work-body">
+                <figure class="work-figure cf" ng-repeat="image in works[selected.current].images">
+                    <img class="work-image" ng-src="wp-content/uploads/{{image.src}}" />
+                    <figcaption class="image-caption font-caption">{{image.caption}}</figcaption>
+                </figure>
+            </section>
         </div>
     </article>
 
-    <script src="shared/js/libs/jquery-2.1.1-custom.min.js"></script>
+    <script src="shared/js/libs/jquery-2.1.4.min.js"></script>
     <script src="shared/js/libs/masonry.pkgd.min.js"></script>
     <script src="shared/js/libs/angular.min.js"></script>
     <script src="shared/js/libs/angular-ui-router.min.js"></script>
     <script src="shared/js/libs/angular-animate.min.js"></script>
     <script src="shared/js/libs/angular-masonry.min.js"></script>
-    <script src="shared/js/libs/snap.js"></script>
-    <script src="shared/js/libs/angular-snap.js"></script>
+    <!--<script src="shared/js/libs/snap.js"></script>
+    <script src="shared/js/libs/angular-snap.js"></script>-->
     <script src="shared/js/libs/fastclick.js"></script>
     <script src="shared/js/libs/perfect-scrollbar.min.js"></script>
     <script src="shared/js/app.js"></script>
@@ -96,7 +103,7 @@
         } else {
             var workDetails = document.getElementById('js-work-details');
             workDetails.style.overflow = "hidden";
-            Ps.initialize(workDetails, {});
+            //Ps.initialize(workDetails, {});
 
             //var browserBody = document.getElementById('js-body');
             //browserBody.style.overflow = "hidden";

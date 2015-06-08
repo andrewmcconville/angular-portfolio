@@ -14,7 +14,7 @@
 		&:nth-child(2) { width: 35%; }
 		&:nth-child(3) { width: 40%; }
 
-		&:hover { border-bottom-color: $indigo-700; }
-		&.active { border-bottom-color: $indigo-900; }
+		&:hover { border-bottom-color: $slate-600; }
+		&.active { border-bottom-color: $slate-700; }
 	}
 }

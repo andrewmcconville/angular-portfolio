@@ -19,59 +19,6 @@ button,
 	}
 }
 
-.button-fab {
-	background-color: $pink-600;
-	border-radius: 100%;
-	bottom: 16px;
-	box-shadow: $shadow-z-2;
-	height: 60px;
-	padding: 0;
-	position: fixed;
-	transition: all 160ms ease-out;
-	width: 60px;
-	z-index: 5;
-
-	&.ng-hide-add {
-		opacity: 1;
-		transform: scale3d(1, 1, 1) rotate(0);
-	}
-
-	&.ng-hide-add-active {
-		opacity: 0;
-		transform: scale3d(0, 0, 1) rotate(180deg);
-	}
-
-	&.ng-hide-remove {
-		opacity: 0;
-		transform: scale3d(0, 0, 1) rotate(-180deg);;
-	}
-
-	&.ng-hide-remove-active {
-		opacity: 1;
-		transform: scale3d(1, 1, 1) rotate(0);
-	}
-
-	&.searching {
-		opacity: .25;
-	}
-
-	.plus {
-		transition: all 75ms;
-
-		&.close {
-			transform: rotate(45deg);
-		}
-	}
-
-	&.fab-add-job {
-		left: 396px;
-	}
-
-	&.fab-job-actions {
-		left: 910px;
-	}
-}
-
 .button-primary {
 	background-color: $pink-600;
 	box-shadow: $shadow-z-2;
