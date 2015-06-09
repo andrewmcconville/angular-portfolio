@@ -28,7 +28,12 @@ button,
 	&:active { background-color: $pink-400; }
 }
 
+.button-secondary {
+	color: $pink-600;
+}
+
 .button-link {
+	color: $pink-600;
 	display: inline-block;
 	height: 28px;
 	min-width: 100px;

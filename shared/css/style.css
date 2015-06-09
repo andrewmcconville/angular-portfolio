@@ -10,11 +10,13 @@ button,
   line-height: 14px;
   padding: 12px 20px 12px 20px;
   text-transform: uppercase;
-  transition: background-color 150ms; }
+  -webkit-transition: background-color 150ms;
+          transition: background-color 150ms; }
   button:hover, button:active,
   .button:hover,
   .button:active {
-    transition: background-color 150ms; }
+    -webkit-transition: background-color 150ms;
+            transition: background-color 150ms; }
 
 .button-primary {
   background-color: #D81B60;
@@ -25,7 +27,11 @@ button,
   .button-primary:active {
     background-color: #EC407A; }
 
+.button-secondary {
+  color: #D81B60; }
+
 .button-link {
+  color: #D81B60;
   display: inline-block;
   height: 28px;
   min-width: 100px;
@@ -43,7 +49,8 @@ body {
 .font-headline {
   color: rgba(0, 0, 0, 0.666);
   font-size: 46px;
-  font-weight: 200; }
+  font-weight: 200;
+  line-height: 46px; }
 
 .font-caption {
   color: rgba(0, 0, 0, 0.5);
@@ -98,7 +105,8 @@ body {
   position: absolute;
   right: 0;
   top: 0;
-  transition: opacity 160ms ease-out;
+  -webkit-transition: opacity 160ms ease-out;
+          transition: opacity 160ms ease-out;
   z-index: 3; }
   @media (min-width: 888px) {
     .work-details {
@@ -107,14 +115,6 @@ body {
       left: 350px;
       padding: 54px 7px 0 10px;
       position: fixed; } }
-  .work-details.ng-hide-add {
-    opacity: 1; }
-  .work-details.ng-hide-add-active {
-    opacity: 0; }
-  .work-details.ng-hide-remove {
-    opacity: 0; }
-  .work-details.ng-hide-remove-active {
-    opacity: 1; }
   .work-details .work-details-background,
   .work-details .work-details-inner {
     background-color: #fff;
@@ -131,10 +131,29 @@ body {
         left: 10px; } }
   .work-details .work-details-inner {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.32);
+    left: 8px;
     overflow: hidden;
-    position: relative;
-    transition: opacity 160ms;
+    position: absolute;
+    right: 8px;
+    top: 54px;
+    -webkit-transition: opacity 320ms;
+            transition: opacity 320ms;
     z-index: 1; }
+    @media (min-width: 888px) {
+      .work-details .work-details-inner {
+        left: 10px; } }
+    .work-details .work-details-inner.ng-leave {
+      opacity: 1;
+      z-index: 1; }
+    .work-details .work-details-inner.ng-leave-active {
+      opacity: 0;
+      z-index: 0; }
+    .work-details .work-details-inner.ng-enter {
+      opacity: 0;
+      z-index: 0; }
+    .work-details .work-details-inner.ng-enter-active {
+      opacity: 1;
+      z-index: 1; }
   .work-details .work-header {
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.24);
     padding: 32px;
@@ -156,14 +175,19 @@ body {
     right: 16px;
     top: 16px; }
   .work-details .font-headline {
+    margin-bottom: 16px;
     text-shadow: 0 0 24px white; }
-  .work-details .font-subheadline {
-    font-size: 18px; }
   .work-details .font-subheadline,
   .work-details .time {
     color: rgba(0, 0, 0, 0.5);
     line-height: 16px;
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.5); }
+  .work-details .font-subheadline {
+    font-size: 18px;
+    margin-bottom: 4px; }
+  .work-details .time {
+    font-size: 14px;
+    font-weight: 300; }
   .work-details .work-body {
     padding: 32px 32px 96px 32px; }
   .work-details .work-figure {
@@ -193,6 +217,11 @@ body {
     .work-list {
       margin: 0;
       width: 360px; } }
+  .work-list.hidden-on-mobile {
+    display: none; }
+    @media (min-width: 888px) {
+      .work-list.hidden-on-mobile {
+        display: block; } }
   .work-list .work {
     background-color: #fff;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.16);
@@ -244,7 +273,8 @@ body {
     font-size: 14px;
     font-weight: 500;
     padding: 18px 0 10px 0;
-    transition: all 150ms; }
+    -webkit-transition: all 150ms;
+            transition: all 150ms; }
     .tabs .button:nth-child(1) {
       width: 25%; }
     .tabs .button:nth-child(2) {

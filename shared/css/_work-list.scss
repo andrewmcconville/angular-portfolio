@@ -11,6 +11,12 @@
 		width: 360px;
 	}
 
+	&.hidden-on-mobile {
+		display: none;
+
+		@media(min-width: 888px) { display: block; }
+	}
+
 	.work {
 		background-color: #fff;
 		box-shadow: $shadow-z-1;

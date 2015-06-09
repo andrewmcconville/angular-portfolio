@@ -1,0 +1,19 @@
+<header class="work-header">
+    <div class="header-background" style="background-image: url(wp-content/uploads/{{::work.blur}}-blur.jpg);"></div>
+    <div class="header-foreground">
+        <div class="detail-toolbar">
+            <a class="button button-secondary" ng-click="current.decrement()">Back</a>
+            <a class="button button-secondary" ng-click="current.increment()">Next</a>
+            <a class="button button-secondary" ng-click="current.reset()">Close</a>
+        </div>
+        <h1 class="font-headline">{{::work.name}}</h1>
+        <h2 class="font-subheadline">{{::work.excerpt}}</h2>
+        <time class="time">{{::work.date | date:'MMMM d, yyyy'}}</time>
+    </div>
+</header>
+<section class="work-body">
+    <figure class="work-figure cf" ng-repeat="image in ::work.images">
+        <img class="work-image" ng-src="wp-content/uploads/{{::image.src}}" width="750" />
+        <figcaption class="image-caption font-caption">{{::image.caption}}</figcaption>
+    </figure>
+</section>

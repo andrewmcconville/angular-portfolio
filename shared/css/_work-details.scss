@@ -15,11 +15,6 @@
 		position: fixed;
 	}
 
-	&.ng-hide-add { opacity: 1; }
-	&.ng-hide-add-active { opacity: 0; }
-	&.ng-hide-remove { opacity: 0; }
-	&.ng-hide-remove-active { opacity: 1; }
-
 	.work-details-background,
 	.work-details-inner {
 		background-color: #fff;
@@ -41,10 +36,37 @@
 
 	.work-details-inner {
 		box-shadow: $shadow-z-3;
+		left: 8px;
 		overflow: hidden;
-		position: relative;
-		transition: opacity 160ms;
+		position: absolute;
+		right: 8px;
+		top: 54px;
+		transition: opacity 320ms;
 		z-index: 1;
+
+		@media(min-width: 888px) {
+			left: 10px;
+		}
+
+		&.ng-leave {
+			opacity: 1;
+			z-index: 1;
+		}
+
+		&.ng-leave-active {
+			opacity: 0;
+			z-index: 0;
+		}
+
+		&.ng-enter {
+			opacity: 0; 
+			z-index: 0;
+		}
+
+		&.ng-enter-active {
+			opacity: 1;
+			z-index: 1;
+		}
 	}
 
 	.work-header {
@@ -76,11 +98,8 @@
 	}
 
 	.font-headline {
+		margin-bottom: 16px;
 		text-shadow: 0 0 24px rgba(255, 255, 255, 1);
-	}
-
-	.font-subheadline {
-		font-size: 18px;
 	}
 
 	.font-subheadline,
@@ -88,6 +107,16 @@
 		color: rgba(0, 0, 0, .5);
 		line-height: 16px;
 		text-shadow: 0 0 12px rgba(255, 255, 255, .5);
+	}
+
+	.font-subheadline {
+		font-size: 18px;
+		margin-bottom: 4px;
+	}
+
+	.time {
+		font-size: 14px;
+		font-weight: 300;
 	}
 
 	.work-body {
