@@ -9,6 +9,7 @@ button,
   font-weight: 500;
   line-height: 14px;
   padding: 12px 20px 12px 20px;
+  text-decoration: none;
   text-transform: uppercase;
   -webkit-transition: background-color 150ms;
           transition: background-color 150ms; }
@@ -17,6 +18,9 @@ button,
   .button:active {
     -webkit-transition: background-color 150ms;
             transition: background-color 150ms; }
+  button .icon,
+  .button .icon {
+    display: block; }
 
 .button-primary {
   background-color: #D81B60;
@@ -82,6 +86,15 @@ body {
       .app-header .toolbar {
         margin: 0;
         width: 360px; } }
+  .app-header .icon-menu {
+    fill: #fff;
+    height: 18px;
+    width: 18px; }
+  .app-header .title {
+    color: rgba(255, 255, 255, 0.75);
+    display: inline-block;
+    position: relative;
+    top: -3px; }
   .app-header .tabs {
     margin: auto;
     width: 320px; }
@@ -174,6 +187,15 @@ body {
     position: absolute;
     right: 16px;
     top: 16px; }
+    .work-details .detail-toolbar .button {
+      color: #0e151e; }
+    .work-details .detail-toolbar .icon {
+      fill: #0e151e;
+      height: 18px;
+      width: 18px; }
+    @media (min-width: 888px) {
+      .work-details .detail-toolbar .button-back {
+        display: none; } }
   .work-details .font-headline {
     margin-bottom: 16px;
     text-shadow: 0 0 24px white; }

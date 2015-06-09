@@ -1,6 +1,6 @@
 angular
 	.module('portfolio')
-    .factory('Works', function($http){
+    .factory('Works', function(){
         var works = [
             {
                 name: "Mesmer",
@@ -130,7 +130,20 @@ angular
                     function(works){ return works.url; }
                 ).indexOf(url);
 
-                return works[index];
+                return {
+                    work: works[index],
+                    index: index
+                };
+            },
+            getPreviousURL: function(index){
+                if(works[index - 1]){
+                    return works[index - 1].url
+                }
+            },
+            getNextURL: function(index){
+                if(works[index + 1]){
+                    return works[index + 1].url
+                }
             },
             getWorks: function(){
                 return works;

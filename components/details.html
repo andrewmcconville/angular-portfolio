@@ -2,9 +2,11 @@
     <div class="header-background" style="background-image: url(wp-content/uploads/{{::work.blur}}-blur.jpg);"></div>
     <div class="header-foreground">
         <div class="detail-toolbar">
-            <a class="button button-secondary" ng-click="current.decrement()">Back</a>
-            <a class="button button-secondary" ng-click="current.increment()">Next</a>
-            <a class="button button-secondary" ng-click="current.reset()">Close</a>
+            <a class="button button-secondary button-back" ui-sref="home" ng-click="reloadMasonry()">
+                <svg class="icon icon-arrow"><use xlink:href="shared/icon-sprite.svg#icon-arrow"></use></svg>
+            </a>
+            <a class="button button-secondary" ui-sref="details({url: previousWorkURL})">Previous</a>
+            <a class="button button-secondary" ui-sref="details({url: nextWorkURL})">Next</a>
         </div>
         <h1 class="font-headline">{{::work.name}}</h1>
         <h2 class="font-subheadline">{{::work.excerpt}}</h2>

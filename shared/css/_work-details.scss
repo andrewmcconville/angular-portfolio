@@ -95,6 +95,20 @@
 		position: absolute;
 		right: 16px;
 		top: 16px;
+
+		.button {
+			color: $slate-700;			
+		}
+
+		.icon {
+			fill: $slate-700;
+			height: 18px;
+			width: 18px;
+		}
+
+		.button-back {
+			@media(min-width: 888px) { display: none; }
+		}
 	}
 
 	.font-headline {

@@ -8,16 +8,17 @@
     <title>Andrew McConville</title>
 
     <style>*{box-sizing:border-box;}body{margin:0;}a,button{outline:0;padding:0;}h1,h2,h3,h4,h5,h6,p,a,img,article,aside,figure,figcaption,footer,header,menu,nav,section,summary,time,ul{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block}ol,ul{list-style:none}</style>
-
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600,700' rel='stylesheet' type='text/css'>
-
     <link rel="stylesheet" type="text/css" href="shared/css/style.css">
 </head>
 
 <body id="js-body" ng-controller="appCtrl">
     <header class="app-header">
         <div class="toolbar">
-            Andrew McConville
+            <button class="button button-secondary">
+                <svg class="icon icon-menu"><use xlink:href="shared/icon-sprite.svg#icon-menu"></use></svg>
+            </button>
+            <div class="title">Andrew McConville</div>
         </div>
         <nav class="tabs" ng-init="activeTab = 0">
             <button class="button" ng-class="{active: activeTab == 0}" ng-click="activeTab = 0">About</button>
@@ -26,9 +27,9 @@
         </nav>
     </header>
 
-    <section class="work-list" ng-class="{'hidden-on-mobile': current.index >= 0}">
+    <section class="work-list" ng-class="{'hidden-on-mobile': false}">
         <ul masonry id="js-bricks" load-images="false" preserve-order masonry-options='{"transitionDuration": "320ms"}'>
-            <li class="work masonry-brick" masonry-tile ng-repeat="work in ::works" ng-click="current.index = $index;" ui-sref="details({url: work.url})">
+            <li class="work masonry-brick" masonry-tile ng-repeat="work in ::works" ui-sref="details({url: work.url})">
                 <div class="work-poster-container">
                     <img class="work-poster" ng-src="wp-content/uploads/{{::work.poster.src}}-thumbnail.png" height="{{::work.poster.height/2}}" width="170" />
                 </div>
@@ -41,10 +42,9 @@
         </div>
     </section>
 
-    <!-- ng-show="current.index >= 0" -->
     <article id="js-work-details" class="work-details">
         <div class="work-details-background"></div>
-        <div class="work-details-inner" ui-view>
+        <div class="work-details-inner" ui-view></div>
     </article>
 
     <script src="shared/js/libs/jquery-2.1.4.min.js"></script>
