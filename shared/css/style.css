@@ -5,19 +5,19 @@ button,
   background-color: transparent;
   border: none;
   cursor: pointer;
+  display: table-cell;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 14px;
-  padding: 12px 20px 12px 20px;
+  padding: 12px 18px 12px 18px;
   text-decoration: none;
   text-transform: uppercase;
-  -webkit-transition: background-color 150ms;
-          transition: background-color 150ms; }
+  transition: background-color 150ms;
+  vertical-align: middle; }
   button:hover, button:active,
   .button:hover,
   .button:active {
-    -webkit-transition: background-color 150ms;
-            transition: background-color 150ms; }
+    transition: background-color 150ms; }
   button .icon,
   .button .icon {
     display: block; }
@@ -72,20 +72,13 @@ body {
   .app-header .toolbar {
     height: 54px;
     margin: auto;
-    width: 320px; }
-    @media (min-width: 360px) {
-      .app-header .toolbar {
-        width: 360px; } }
-    @media (min-width: 530px) {
-      .app-header .toolbar {
-        width: 530px; } }
-    @media (min-width: 700px) {
-      .app-header .toolbar {
-        width: 700px; } }
-    @media (min-width: 870px) {
+    width: 100%; }
+    @media (min-width: 888px) {
       .app-header .toolbar {
         margin: 0;
         width: 360px; } }
+    .app-header .toolbar .button {
+      height: 54px; }
   .app-header .icon-menu {
     fill: #fff;
     height: 18px;
@@ -93,33 +86,21 @@ body {
   .app-header .title {
     color: rgba(255, 255, 255, 0.75);
     display: inline-block;
-    position: relative;
-    top: -3px; }
+    vertical-align: middle; }
   .app-header .tabs {
     margin: auto;
-    width: 320px; }
-    @media (min-width: 360px) {
-      .app-header .tabs {
-        width: 360px; } }
-    @media (min-width: 530px) {
-      .app-header .tabs {
-        width: 530px; } }
-    @media (min-width: 700px) {
-      .app-header .tabs {
-        width: 700px; } }
-    @media (min-width: 870px) {
+    width: 100%; }
+    @media (min-width: 888px) {
       .app-header .tabs {
         margin: 0;
         width: 360px; } }
 
 .work-details {
   left: 0;
-  padding: 54px 0 0 0;
+  min-height: 100%;
   position: absolute;
   right: 0;
   top: 0;
-  -webkit-transition: opacity 160ms ease-out;
-          transition: opacity 160ms ease-out;
   z-index: 3; }
   @media (min-width: 888px) {
     .work-details {
@@ -128,38 +109,45 @@ body {
       left: 350px;
       padding: 54px 7px 0 10px;
       position: fixed; } }
+  .work-details.ps-container {
+    bottom: 0;
+    overflow: hidden; }
   .work-details .work-details-background,
   .work-details .work-details-inner {
     background-color: #fff;
     max-width: 940px;
-    min-height: 100%; }
+    min-height: 100%;
+    top: 54px; }
   .work-details .work-details-background {
-    left: 8px;
+    display: none;
     position: absolute;
-    right: 8px;
-    top: 54px;
+    transition: opacity 160ms ease-out 160ms;
+    width: 100%;
     z-index: 0; }
     @media (min-width: 888px) {
       .work-details .work-details-background {
-        left: 10px; } }
+        left: 10px;
+        right: 8px; } }
+    .work-details .work-details-background.ng-hide-add {
+      opacity: 0; }
+    .work-details .work-details-background.ng-hide-add-active {
+      opacity: 0; }
+    .work-details .work-details-background.ng-hide-remove {
+      opacity: 1; }
+    .work-details .work-details-background.ng-hide-remove-active {
+      opacity: 1; }
   .work-details .work-details-inner {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.32);
-    left: 8px;
     overflow: hidden;
     position: absolute;
-    right: 8px;
-    top: 54px;
-    -webkit-transition: opacity 320ms;
-            transition: opacity 320ms;
+    transition: opacity 320ms;
+    width: 100%;
     z-index: 1; }
-    @media (min-width: 888px) {
-      .work-details .work-details-inner {
-        left: 10px; } }
     .work-details .work-details-inner.ng-leave {
       opacity: 1;
       z-index: 1; }
     .work-details .work-details-inner.ng-leave-active {
-      opacity: 0;
+      opacity: 1;
       z-index: 0; }
     .work-details .work-details-inner.ng-enter {
       opacity: 0;
@@ -169,8 +157,12 @@ body {
       z-index: 1; }
   .work-details .work-header {
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.24);
+    min-height: 192px;
     padding: 32px;
     position: relative; }
+    @media (min-width: 888px) {
+      .work-details .work-header {
+        padding-top: 54px; } }
   .work-details .header-background {
     background-position: center center;
     background-size: cover;
@@ -184,15 +176,31 @@ body {
     position: relative;
     z-index: 1; }
   .work-details .detail-toolbar {
-    position: absolute;
-    right: 16px;
-    top: 16px; }
+    background-color: #434957;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 3; }
+    @media (min-width: 888px) {
+      .work-details .detail-toolbar {
+        background-color: transparent;
+        left: auto;
+        position: absolute; } }
     .work-details .detail-toolbar .button {
-      color: #0e151e; }
+      color: #fff;
+      height: 54px; }
+      @media (min-width: 888px) {
+        .work-details .detail-toolbar .button {
+          color: #0e151e;
+          opacity: .85; } }
     .work-details .detail-toolbar .icon {
-      fill: #0e151e;
+      fill: #fff;
       height: 18px;
       width: 18px; }
+      @media (min-width: 888px) {
+        .work-details .detail-toolbar .icon {
+          color: #0e151e; } }
     @media (min-width: 888px) {
       .work-details .detail-toolbar .button-back {
         display: none; } }
@@ -295,14 +303,13 @@ body {
     font-size: 14px;
     font-weight: 500;
     padding: 18px 0 10px 0;
-    -webkit-transition: all 150ms;
-            transition: all 150ms; }
+    transition: all 150ms; }
     .tabs .button:nth-child(1) {
-      width: 25%; }
+      width: 30%; }
     .tabs .button:nth-child(2) {
-      width: 35%; }
+      width: 33%; }
     .tabs .button:nth-child(3) {
-      width: 40%; }
+      width: 37%; }
     .tabs .button:hover {
       border-bottom-color: #293340; }
     .tabs .button.active {
@@ -312,7 +319,8 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  background-color: #f4f5f6; }
+  background-color: #f4f5f6;
+  overflow-y: scroll; }
 
 img {
   display: block; }

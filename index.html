@@ -21,13 +21,13 @@
             <div class="title">Andrew McConville</div>
         </div>
         <nav class="tabs" ng-init="activeTab = 0">
-            <button class="button" ng-class="{active: activeTab == 0}" ng-click="activeTab = 0">About</button>
+            <button class="button" ng-class="{active: activeTab == 0}" ng-click="activeTab = 0">About Me</button>
             <button class="button" ng-class="{active: activeTab == 1}" ng-click="activeTab = 1">Interfaces</button>
             <button class="button" ng-class="{active: activeTab == 2}" ng-click="activeTab = 2">Infographics</button>
         </nav>
     </header>
 
-    <section class="work-list" ng-class="{'hidden-on-mobile': false}">
+    <section class="work-list" ng-class="{'hidden-on-mobile': updateState()}">
         <ul masonry id="js-bricks" load-images="false" preserve-order masonry-options='{"transitionDuration": "320ms"}'>
             <li class="work masonry-brick" masonry-tile ng-repeat="work in ::works" ui-sref="details({url: work.url})">
                 <div class="work-poster-container">
@@ -38,12 +38,12 @@
             </li>
         </ul>
         <div class="end-of-list-message">
-            <p>This is the end, email me!</p>
+            <p ng-click="console()">This is the end, email me!</p>
         </div>
     </section>
 
-    <article id="js-work-details" class="work-details">
-        <div class="work-details-background"></div>
+    <article id="js-work-details" class="work-details" ng-show="updateState()">
+        <div class="work-details-background" ng-show="updateState()"></div>
         <div class="work-details-inner" ui-view></div>
     </article>
 
@@ -78,15 +78,13 @@
             }
         }
 
-        if(isMobile()){
+        if(isMobile() || window.innerWidth < 888){
             //do not use perfect scrollbar on touch devices
         } else {
             var workDetails = document.getElementById('js-work-details');
-            workDetails.style.overflow = "hidden";
             Ps.initialize(workDetails, {});
 
             //var browserBody = document.getElementById('js-body');
-            //browserBody.style.overflow = "hidden";
             //Ps.initialize(browserBody, {});
         }
     </script>

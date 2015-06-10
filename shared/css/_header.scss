@@ -10,14 +10,15 @@
 	.toolbar {
 		height: 54px;
 		margin: auto;
-		width: 320px;
+		width: 100%;
 
-		@media(min-width: 360px) { width: 360px; }
-		@media(min-width: 530px) { width: 530px; }
-		@media(min-width: 700px) { width: 700px; }
-		@media(min-width: 870px) {
+		@media(min-width: 888px) {
 			margin: 0;
 			width: 360px;
+		}
+
+		.button {
+			height: 54px;
 		}
 	}
 
@@ -30,18 +31,14 @@
 	.title {
 		color: rgba(255, 255, 255, .75);
 		display: inline-block;
-		position: relative;
-		top: -3px;
+		vertical-align: middle;
 	}
 
 	.tabs {
 		margin: auto;
-		width: 320px;
+		width: 100%;
 
-		@media(min-width: 360px) { width: 360px; }
-		@media(min-width: 530px) { width: 530px; }
-		@media(min-width: 700px) { width: 700px; }
-		@media(min-width: 870px) {
+		@media(min-width: 888px) {
 			margin: 0;
 			width: 360px;
 		}

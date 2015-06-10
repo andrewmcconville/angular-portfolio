@@ -1,10 +1,9 @@
 .work-details {
 	left: 0;
-	padding: 54px 0 0 0;
+	min-height: 100%;
 	position: absolute;
 	right: 0;
 	top: 0;
-	transition: opacity 160ms ease-out;
 	z-index: 3;
 
 	@media(min-width: 888px) {
@@ -15,38 +14,55 @@
 		position: fixed;
 	}
 
+	&.ps-container {
+		bottom: 0;
+		overflow: hidden;
+	}
+
 	.work-details-background,
 	.work-details-inner {
 		background-color: #fff;
 		max-width: 940px;
 		min-height: 100%;
+		top: 54px;
 	}
 
 	.work-details-background {
-		left: 8px;
+		display: none;
 		position: absolute;
-		right: 8px;
-		top: 54px;
+		transition: opacity 160ms ease-out 160ms;
+		width: 100%;
 		z-index: 0;
 
 		@media(min-width: 888px) {
 			left: 10px;
+			right: 8px;
+		}
+
+		&.ng-hide-add {
+			opacity: 0;
+		}
+
+		&.ng-hide-add-active {
+			opacity: 0;
+		}
+
+		&.ng-hide-remove {
+			opacity: 1; 
+		}
+
+		&.ng-hide-remove-active {
+			opacity: 1;
 		}
 	}
 
 	.work-details-inner {
 		box-shadow: $shadow-z-3;
-		left: 8px;
 		overflow: hidden;
 		position: absolute;
-		right: 8px;
-		top: 54px;
 		transition: opacity 320ms;
+		width: 100%;
 		z-index: 1;
-
-		@media(min-width: 888px) {
-			left: 10px;
-		}
 
 		&.ng-leave {
 			opacity: 1;
@@ -54,7 +70,7 @@
 		}
 
 		&.ng-leave-active {
-			opacity: 0;
+			opacity: 1;
 			z-index: 0;
 		}
 
@@ -71,8 +87,13 @@
 
 	.work-header {
 		box-shadow: $shadow-z-2;
+		min-height: 192px;
 		padding: 32px;
 		position: relative;
+
+		@media(min-width: 888px) {
+			padding-top: 54px;
+		}
 	}
 
 	.header-background {
@@ -92,18 +113,37 @@
 	}
 
 	.detail-toolbar {
-		position: absolute;
-		right: 16px;
-		top: 16px;
+		background-color: $slate-500;
+		left: 0;
+		position: fixed;
+		right: 0;
+		top: 0;
+		z-index: 3;
+
+		@media(min-width:888px) {
+			background-color: transparent;
+			left: auto;
+			position: absolute;
+		}
 
 		.button {
-			color: $slate-700;			
+			color: #fff;	
+			height: 54px;
+
+			@media(min-width:888px) {
+				color: $slate-700;
+				opacity: .85;
+			}
 		}
 
 		.icon {
-			fill: $slate-700;
+			fill: #fff;
 			height: 18px;
 			width: 18px;
+
+			@media(min-width:888px) {
+				color: $slate-700;
+			}
 		}
 
 		.button-back {
