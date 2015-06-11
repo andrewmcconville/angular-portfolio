@@ -5,6 +5,7 @@
 @import 'shadows';
 
 //components
+@import 'app-menu';
 @import 'header';
 @import 'work-details';
 @import 'work-list';
@@ -16,7 +17,7 @@ html {
 }
 
 body {
-	background-color: #f4f5f6;
+	background-color: $slate-50;
 	overflow-y: scroll; 
 }
 

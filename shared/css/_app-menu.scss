@@ -1,0 +1,80 @@
+.app-menu {
+	background-color: $slate-50;
+	box-shadow: $shadow-z-4;
+	left: 4px;
+	position: fixed;
+	top: 4px;
+	transform-origin: 0 0;
+	transition: all 160ms ease-out;
+	width: 200px;
+	z-index: 3;
+
+	&.ng-hide-add {
+		opacity: 1;
+		//transform: scale3d(1, 1, 0);
+	}
+	
+	&.ng-hide-add-active {
+		opacity: 0;
+		//transform: scale3d(.9, .9, 0);
+	}
+
+	&.ng-hide-remove {
+		opacity: 0;
+		//transform: scale3d(.9, .9, 0);
+	}
+	
+	&.ng-hide-remove-active {
+		opacity: 1;
+		//transform: scale3d(1, 1, 0);
+	}
+
+	.button-back {
+		height: 54px;
+		left: -4px;
+		position: relative;
+		top: -4px;
+	}
+
+	.icon-arrow {
+		fill: $slate-500;
+		height: 18px;
+		transform: rotate(-90deg);
+		transition: all 160ms ease-out;
+		width: 18px;
+
+		&.spin {
+			transform: rotate(0deg);
+		}
+	}
+
+	.menu-links {
+		padding: 0 12px 12px 12px;
+	}
+
+	.menu-link {
+		opacity: 0;
+		padding: 8px;
+
+		&:nth-child(1) { transform: translate3d(0, -2px, 0); }
+		&:nth-child(2) { transform: translate3d(0, -4px, 0); }
+		&:nth-child(3) { transform: translate3d(0, -6px, 0); }
+		&:nth-child(4) { transform: translate3d(0, -8px, 0); }
+		&:nth-child(5) { transform: translate3d(0, -10px, 0); }
+		&:nth-child(6) { transform: translate3d(0, -12px, 0); }
+	}
+
+	.stager {
+		.menu-link {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+
+			&:nth-child(1) { transition: all 320ms ease-out 80ms; }
+			&:nth-child(2) { transition: all 300ms ease-out 100ms; }
+			&:nth-child(3) { transition: all 280ms ease-out 120ms; }
+			&:nth-child(4) { transition: all 260ms ease-out 140ms; }
+			&:nth-child(5) { transition: all 240ms ease-out 160ms; }
+			&:nth-child(6) { transition: all 220ms ease-out 180ms; }
+		}
+	}
+}

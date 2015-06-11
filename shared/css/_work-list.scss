@@ -1,7 +1,9 @@
 .work-list {
 	margin: auto;
 	padding: 108px 4px 10px 4px;
+	transform: translate3d(0, 0, 0);
 	width: 320px;
+	z-index: 1;
 
 	@media(min-width: 360px) { width: 360px; }
 	@media(min-width: 536px) { width: 536px; }

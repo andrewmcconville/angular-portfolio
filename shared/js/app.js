@@ -24,28 +24,23 @@ app.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider,
 						$('#js-bricks').masonry({
 							itemSelector: '.masonry-brick'
 						});
-					}, 160);
+					}, 40);
 				};
 			}
 		});
 }]);
 
-app.controller('appCtrl', ['$scope', '$state', '$stateParams', '$timeout', 'Works', function($scope, $state, $stateParams, $timeout, Works) {
+app.controller('appCtrl', ['$rootScope', '$scope', '$state', '$stateParams', '$timeout', 'Works', function($rootScope, $scope, $state, $stateParams, $timeout, Works) {
 	$scope.works = Works.getWorks();
-	
-	$timeout(function(){
-		$scope.updateState();
-	}, 0);
+	$scope.isDetailsState = false;
+	$scope.menuOpen = false;
 
-	$scope.updateState = function(){
-		$(window).scrollTop(0);
-
-		if($state.current.name == 'details') {
-			$scope.detailsActive = true;
-			return $scope.detailsActive;
+	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
+		if(toState.name === 'details'){
+			$scope.isDetailsState = true;
+			$(window).scrollTop(0);
 		} else {
-			$scope.detailsActive = false;
-			return $scope.detailsActive;
-		}		
-	};
+			$scope.isDetailsState = false;
+		}
+	});
 }]);

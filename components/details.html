@@ -1,12 +1,14 @@
-<header class="work-header">
-    <div class="header-background" style="background-image: url(wp-content/uploads/{{::work.blur}}-blur.jpg);"></div>
-    <div class="detail-toolbar">
-        <a class="button button-secondary button-back" ui-sref="home" ng-click="reloadMasonry(); updateState();">
-            <svg class="icon icon-arrow"><use xlink:href="shared/icon-sprite.svg#icon-arrow"></use></svg>
-        </a>
+<nav class="detail-toolbar">
+    <a class="button button-secondary button-back" ui-sref="home" ng-click="reloadMasonry(); updateState();">
+        <svg class="icon icon-arrow"><use xlink:href="shared/icon-sprite.svg#icon-arrow"></use></svg>
+    </a>
+    <div class="previous-next-buttons">
         <a class="button button-secondary" ui-sref="details({url: previousWorkURL})">Previous</a>
         <a class="button button-secondary" ui-sref="details({url: nextWorkURL})">Next</a>
     </div>
+</nav>
+<header class="work-header">
+    <div class="header-background" style="background-image: url(wp-content/uploads/{{::work.blur}}-blur.jpg);"></div>
     <div class="header-foreground">
         <h1 class="font-headline">{{::work.name}}</h1>
         <h2 class="font-subheadline">{{::work.excerpt}}</h2>
@@ -15,7 +17,7 @@
 </header>
 <section class="work-body">
     <figure class="work-figure cf" ng-repeat="image in ::work.images">
-        <img class="work-image" ng-src="wp-content/uploads/{{::image.src}}" width="750" />
+        <img class="work-image" ng-src="wp-content/uploads/{{::image.src}}" width="750" height="{{::image.height}}" />
         <figcaption class="image-caption font-caption">{{::image.caption}}</figcaption>
     </figure>
 </section>

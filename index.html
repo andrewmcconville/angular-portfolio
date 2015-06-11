@@ -15,8 +15,8 @@
 <body id="js-body" ng-controller="appCtrl">
     <header class="app-header">
         <div class="toolbar">
-            <button class="button button-secondary">
-                <svg class="icon icon-menu"><use xlink:href="shared/icon-sprite.svg#icon-menu"></use></svg>
+            <button class="button button-secondary" ng-click="menuOpen = true">
+                <svg class="icon icon-menu" ng-class="{'spin': menuOpen}"><use xlink:href="shared/icon-sprite.svg#icon-menu"></use></svg>
             </button>
             <div class="title">Andrew McConville</div>
         </div>
@@ -27,7 +27,7 @@
         </nav>
     </header>
 
-    <section class="work-list" ng-class="{'hidden-on-mobile': updateState()}">
+    <section class="work-list" ng-class="{'hidden-on-mobile': isDetailsState}">
         <ul masonry id="js-bricks" load-images="false" preserve-order masonry-options='{"transitionDuration": "320ms"}'>
             <li class="work masonry-brick" masonry-tile ng-repeat="work in ::works" ui-sref="details({url: work.url})">
                 <div class="work-poster-container">
@@ -42,10 +42,23 @@
         </div>
     </section>
 
-    <article id="js-work-details" class="work-details" ng-show="updateState()">
-        <div class="work-details-background" ng-show="updateState()"></div>
-        <div class="work-details-inner" ui-view></div>
+    <article id="js-work-details" class="work-details" ng-show="isDetailsState">
+        <ui-view class="work-details-inner"></ui-view>
     </article>
+
+    <nav class="app-menu" ng-show="menuOpen">
+        <button class="button button-secondary button-back" ng-click="menuOpen = false">
+            <svg class="icon icon-arrow" ng-class="{'spin': menuOpen}"><use xlink:href="shared/icon-sprite.svg#icon-arrow"></use></svg>
+        </button>
+        <ul class="menu-links" ng-class="{'stager': menuOpen}">
+            <li class="menu-link">LinkedIn</li>
+            <li class="menu-link">Google</li>
+            <li class="menu-link">Resume</li>
+            <li class="menu-link">About</li>
+            <li class="menu-link">Interfaces</li>
+            <li class="menu-link">Infographics</li>
+        </ul>
+    </nav>
 
     <script src="shared/js/libs/jquery-2.1.4.min.js"></script>
     <script src="shared/js/libs/masonry.pkgd.min.js"></script>

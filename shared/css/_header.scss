@@ -17,6 +17,12 @@
 			width: 360px;
 		}
 
+		&.hidden-on-mobile {
+			visibility: hidden;
+
+			@media(min-width: 888px) { visibility: visible; }
+		}
+
 		.button {
 			height: 54px;
 		}
@@ -25,7 +31,13 @@
 	.icon-menu {
 		fill: #fff;
 		height: 18px;
+		transform: rotate(0deg);
+		transition: all 160ms ease-out;
 		width: 18px;
+
+		&.spin {
+			transform: rotate(90deg);
+		}
 	}
 
 	.title {
@@ -41,6 +53,12 @@
 		@media(min-width: 888px) {
 			margin: 0;
 			width: 360px;
+		}
+
+		&.hidden-on-mobile {
+			visibility: hidden;
+
+			@media(min-width: 888px) { visibility: visible; }
 		}
 	}
 }

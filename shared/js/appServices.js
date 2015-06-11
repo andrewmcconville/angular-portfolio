@@ -48,19 +48,23 @@ angular
                 images: [
                     {
                         src: "2011/12/demographics-supersized-infographic.png",
-                        caption: "Demographics supersized infographic overview."
+                        caption: "Demographics supersized infographic overview.",
+                        height: 500
                     },
                     {
                         src: "2011/12/demographics-supersized-infographic-graphs.png",
-                        caption: "City demographics as bar graph placed side by side for fast comparison."
+                        caption: "City demographics as bar graph placed side by side for fast comparison.",
+                        height: 500
                     },
                     {
                         src: "2011/12/demographics-supersized-infographic-city-data.png",
-                        caption: "McDonald's locations compared to Milwaukee county city demographics.."
+                        caption: "McDonald's locations compared to Milwaukee county city demographics.",
+                        height: 500
                     },
                     {
                         src: "2011/12/demographics-supersized-infographic-national-state.png",
-                        caption: "U.S. and Wisconsin demographic comparison."
+                        caption: "U.S. and Wisconsin demographic comparison.",
+                        height: 500
                     }
                 ]
             },
@@ -78,27 +82,33 @@ angular
                 images: [
                     {
                         src: "2011/12/great-lakes-infographic.png",
-                        caption: "Infographic on Great Lakes coal energy use."
+                        caption: "Infographic on Great Lakes coal energy use.",
+                        height: 422
                     },
                     {
                         src: "2011/12/great-lakes-infographic-powder-river-basin.png",
-                        caption: "Coal life-cycle shown as 4 step narrative."
+                        caption: "Coal life-cycle shown as 4 step narrative.",
+                        height: 500
                     },
                     {
                         src: "2011/12/great-lakes-infographic-coal-sources.png",
-                        caption: "Wyoming's Powder River Basin leads coal extraction in U.S."
+                        caption: "Wyoming's Powder River Basin leads coal extraction in U.S.",
+                        height: 400
                     },
                     {
                         src: "2011/12/great-lakes-infographic-electricity-from-coal.png",
-                        caption: "Circular bar graph showing Indiana as top Great Lake coal user."
+                        caption: "Circular bar graph showing Indiana as top Great Lake coal user.",
+                        height: 400
                     },
                     {
                         src: "2011/12/great-lakes-infographic-food-carbon.png",
-                        caption: "Food groups with highest carbon footprint."
+                        caption: "Food groups with highest carbon footprint.",
+                        height: 400
                     },
                     {
                         src: "2011/12/great-lakes-infographic-city-data.png",
-                        caption: "Data featuring energy use by metropolitan area."
+                        caption: "Data featuring energy use by metropolitan area.",
+                        height: 500
                     }
                 ]
             },

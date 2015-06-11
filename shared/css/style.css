@@ -12,30 +12,32 @@ button,
   padding: 12px 18px 12px 18px;
   text-decoration: none;
   text-transform: uppercase;
-  transition: background-color 150ms;
+  -webkit-transition: background-color 150ms;
+          transition: background-color 150ms;
   vertical-align: middle; }
   button:hover, button:active,
   .button:hover,
   .button:active {
-    transition: background-color 150ms; }
+    -webkit-transition: background-color 150ms;
+            transition: background-color 150ms; }
   button .icon,
   .button .icon {
     display: block; }
 
 .button-primary {
-  background-color: #D81B60;
+  background-color: #0e151e;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.24);
   color: #fff; }
   .button-primary:hover {
-    background-color: #E91E63; }
+    background-color: #293340; }
   .button-primary:active {
-    background-color: #EC407A; }
+    background-color: #434957; }
 
 .button-secondary {
-  color: #D81B60; }
+  color: #0e151e; }
 
 .button-link {
-  color: #D81B60;
+  color: #0e151e;
   display: inline-block;
   height: 28px;
   min-width: 100px;
@@ -61,6 +63,91 @@ body {
   font-size: 14px;
   font-style: italic; }
 
+.app-menu {
+  background-color: #f4f5f6;
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.4);
+  left: 4px;
+  position: fixed;
+  top: 4px;
+  -webkit-transform-origin: 0 0;
+      -ms-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transition: all 160ms ease-out;
+          transition: all 160ms ease-out;
+  width: 200px;
+  z-index: 3; }
+  .app-menu.ng-hide-add {
+    opacity: 1; }
+  .app-menu.ng-hide-add-active {
+    opacity: 0; }
+  .app-menu.ng-hide-remove {
+    opacity: 0; }
+  .app-menu.ng-hide-remove-active {
+    opacity: 1; }
+  .app-menu .button-back {
+    height: 54px;
+    left: -4px;
+    position: relative;
+    top: -4px; }
+  .app-menu .icon-arrow {
+    fill: #434957;
+    height: 18px;
+    -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    -webkit-transition: all 160ms ease-out;
+            transition: all 160ms ease-out;
+    width: 18px; }
+    .app-menu .icon-arrow.spin {
+      -webkit-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+              transform: rotate(0deg); }
+  .app-menu .menu-links {
+    padding: 0 12px 12px 12px; }
+  .app-menu .menu-link {
+    opacity: 0;
+    padding: 8px; }
+    .app-menu .menu-link:nth-child(1) {
+      -webkit-transform: translate3d(0, -2px, 0);
+              transform: translate3d(0, -2px, 0); }
+    .app-menu .menu-link:nth-child(2) {
+      -webkit-transform: translate3d(0, -4px, 0);
+              transform: translate3d(0, -4px, 0); }
+    .app-menu .menu-link:nth-child(3) {
+      -webkit-transform: translate3d(0, -6px, 0);
+              transform: translate3d(0, -6px, 0); }
+    .app-menu .menu-link:nth-child(4) {
+      -webkit-transform: translate3d(0, -8px, 0);
+              transform: translate3d(0, -8px, 0); }
+    .app-menu .menu-link:nth-child(5) {
+      -webkit-transform: translate3d(0, -10px, 0);
+              transform: translate3d(0, -10px, 0); }
+    .app-menu .menu-link:nth-child(6) {
+      -webkit-transform: translate3d(0, -12px, 0);
+              transform: translate3d(0, -12px, 0); }
+  .app-menu .stager .menu-link {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+    .app-menu .stager .menu-link:nth-child(1) {
+      -webkit-transition: all 320ms ease-out 80ms;
+              transition: all 320ms ease-out 80ms; }
+    .app-menu .stager .menu-link:nth-child(2) {
+      -webkit-transition: all 300ms ease-out 100ms;
+              transition: all 300ms ease-out 100ms; }
+    .app-menu .stager .menu-link:nth-child(3) {
+      -webkit-transition: all 280ms ease-out 120ms;
+              transition: all 280ms ease-out 120ms; }
+    .app-menu .stager .menu-link:nth-child(4) {
+      -webkit-transition: all 260ms ease-out 140ms;
+              transition: all 260ms ease-out 140ms; }
+    .app-menu .stager .menu-link:nth-child(5) {
+      -webkit-transition: all 240ms ease-out 160ms;
+              transition: all 240ms ease-out 160ms; }
+    .app-menu .stager .menu-link:nth-child(6) {
+      -webkit-transition: all 220ms ease-out 180ms;
+              transition: all 220ms ease-out 180ms; }
+
 .app-header {
   background-color: #434957;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.32);
@@ -77,12 +164,26 @@ body {
       .app-header .toolbar {
         margin: 0;
         width: 360px; } }
+    .app-header .toolbar.hidden-on-mobile {
+      visibility: hidden; }
+      @media (min-width: 888px) {
+        .app-header .toolbar.hidden-on-mobile {
+          visibility: visible; } }
     .app-header .toolbar .button {
       height: 54px; }
   .app-header .icon-menu {
     fill: #fff;
     height: 18px;
+    -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transition: all 160ms ease-out;
+            transition: all 160ms ease-out;
     width: 18px; }
+    .app-header .icon-menu.spin {
+      -webkit-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+              transform: rotate(90deg); }
   .app-header .title {
     color: rgba(255, 255, 255, 0.75);
     display: inline-block;
@@ -94,6 +195,11 @@ body {
       .app-header .tabs {
         margin: 0;
         width: 360px; } }
+    .app-header .tabs.hidden-on-mobile {
+      visibility: hidden; }
+      @media (min-width: 888px) {
+        .app-header .tabs.hidden-on-mobile {
+          visibility: visible; } }
 
 .work-details {
   left: 0;
@@ -108,7 +214,8 @@ body {
       display: block;
       left: 350px;
       padding: 54px 7px 0 10px;
-      position: fixed; } }
+      position: fixed;
+      right: 8px; } }
   .work-details.ps-container {
     bottom: 0;
     overflow: hidden; }
@@ -121,62 +228,42 @@ body {
   .work-details .work-details-background {
     display: none;
     position: absolute;
-    transition: opacity 160ms ease-out 160ms;
     width: 100%;
     z-index: 0; }
     @media (min-width: 888px) {
       .work-details .work-details-background {
         left: 10px;
         right: 8px; } }
-    .work-details .work-details-background.ng-hide-add {
-      opacity: 0; }
-    .work-details .work-details-background.ng-hide-add-active {
-      opacity: 0; }
-    .work-details .work-details-background.ng-hide-remove {
-      opacity: 1; }
-    .work-details .work-details-background.ng-hide-remove-active {
-      opacity: 1; }
   .work-details .work-details-inner {
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.32);
-    overflow: hidden;
+    left: 0;
+    opacity: 1;
     position: absolute;
-    transition: opacity 320ms;
-    width: 100%;
+    right: 0;
     z-index: 1; }
-    .work-details .work-details-inner.ng-leave {
-      opacity: 1;
-      z-index: 1; }
-    .work-details .work-details-inner.ng-leave-active {
-      opacity: 1;
-      z-index: 0; }
+    @media (min-width: 888px) {
+      .work-details .work-details-inner {
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.32);
+        left: 10px;
+        right: 7px;
+        -webkit-transition: all 320ms;
+                transition: all 320ms; } }
     .work-details .work-details-inner.ng-enter {
       opacity: 0;
-      z-index: 0; }
+      z-index: 1; }
     .work-details .work-details-inner.ng-enter-active {
       opacity: 1;
       z-index: 1; }
-  .work-details .work-header {
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.24);
-    min-height: 192px;
-    padding: 32px;
-    position: relative; }
-    @media (min-width: 888px) {
-      .work-details .work-header {
-        padding-top: 54px; } }
-  .work-details .header-background {
-    background-position: center center;
-    background-size: cover;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 0; }
-  .work-details .header-foreground {
-    position: relative;
-    z-index: 1; }
+    .work-details .work-details-inner.ng-leave {
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.32);
+      opacity: 1;
+      z-index: 0; }
+    .work-details .work-details-inner.ng-leave-active {
+      box-shadow: 0 0 0 0 transparent;
+      opacity: 1;
+      z-index: 0; }
   .work-details .detail-toolbar {
     background-color: #434957;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.32);
     left: 0;
     position: fixed;
     right: 0;
@@ -185,15 +272,20 @@ body {
     @media (min-width: 888px) {
       .work-details .detail-toolbar {
         background-color: transparent;
+        box-shadow: none;
         left: auto;
         position: absolute; } }
+    .work-details .detail-toolbar .previous-next-buttons {
+      position: absolute;
+      right: 8px;
+      top: 0; }
     .work-details .detail-toolbar .button {
       color: #fff;
       height: 54px; }
       @media (min-width: 888px) {
         .work-details .detail-toolbar .button {
           color: #0e151e;
-          opacity: .85; } }
+          opacity: .75; } }
     .work-details .detail-toolbar .icon {
       fill: #fff;
       height: 18px;
@@ -204,6 +296,27 @@ body {
     @media (min-width: 888px) {
       .work-details .detail-toolbar .button-back {
         display: none; } }
+  .work-details .work-header {
+    min-height: 192px;
+    overflow: hidden;
+    padding: 32px;
+    position: relative; }
+    @media (min-width: 888px) {
+      .work-details .work-header {
+        padding-top: 54px; } }
+  .work-details .header-background {
+    background-position: center center;
+    background-size: cover;
+    bottom: 8px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.24);
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0; }
+  .work-details .header-foreground {
+    position: relative;
+    z-index: 1; }
   .work-details .font-headline {
     margin-bottom: 16px;
     text-shadow: 0 0 24px white; }
@@ -224,6 +337,7 @@ body {
     margin-bottom: 32px; }
   .work-details .work-image {
     float: left;
+    height: auto;
     max-width: 750px;
     width: 100%; }
   .work-details .image-caption {
@@ -233,7 +347,10 @@ body {
 .work-list {
   margin: auto;
   padding: 108px 4px 10px 4px;
-  width: 320px; }
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  width: 320px;
+  z-index: 1; }
   @media (min-width: 360px) {
     .work-list {
       width: 360px; } }
@@ -303,7 +420,8 @@ body {
     font-size: 14px;
     font-weight: 500;
     padding: 18px 0 10px 0;
-    transition: all 150ms; }
+    -webkit-transition: all 150ms;
+            transition: all 150ms; }
     .tabs .button:nth-child(1) {
       width: 30%; }
     .tabs .button:nth-child(2) {
