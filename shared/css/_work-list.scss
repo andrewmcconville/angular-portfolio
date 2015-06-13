@@ -6,6 +6,7 @@
 	z-index: 1;
 
 	@media(min-width: 360px) { width: 360px; }
+	@media(min-width: 375px) { width: 372px; }
 	@media(min-width: 536px) { width: 536px; }
 	@media(min-width: 712px) { width: 712px; }
 	@media(min-width: 888px) {
@@ -23,12 +24,14 @@
 		background-color: #fff;
 		box-shadow: $shadow-z-1;
 		cursor: pointer;
+		float: left;
 		margin: 3px;
+		padding-bottom: 12px;
 		width: 150px;
 
-		@media(min-width: 360px) {
-			width: 170px;
-		}
+		@media(min-width: 360px) { width: 170px; }
+		@media(min-width: 375px) { margin: 6px; }
+		@media(min-width: 536px) { margin: 3px; }
 
 		&:nth-last-child(1) { border-bottom: none; }
 	}
@@ -39,43 +42,34 @@
 
 	.work-poster {
 		background-color: #9dc2e8;
-		margin-left: -10px;
+		height: 150px;
+		width: 150px;
 
-		@media(min-width: 360px) { margin-left: 0; }
+		@media(min-width: 360px) {
+			height: 170px;
+			width: 170px;
+		}
 	}
 
 	.work-name {
 		color: #666;
 		font-size: 16px;
 		font-weight: 400;
-		line-height: 16px;
+		line-height: 16px; 
+		overflow: hidden;
 		padding: 12px 8px 2px 8px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
-
-	// .snap-wrapper {
-	// 	height: 56px;
-	// 	overflow: hidden;
-	// 	position: relative;
-
-	// 	.content {
-	// 		background-color: #fff;
-	// 		box-shadow: 0 0 8px 0 rgba(0, 0, 0, .25);
-	// 	}
-
-	// 	.drawer {
-	// 		background-color: #888888;
-	// 		box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, .25);
-	// 		height: 100%;
-	// 		width: 100%;
-	// 	}
-	// }
 
 	.work-excerpt {
 		color: #888;
 		font-size: 12px;
 		font-weight: 300;
+		height: 44px;
 		line-height: 14px;
-		padding: 2px 8px 12px 8px;
+		overflow: hidden;
+		padding: 2px 8px 0 8px;
 	}
 
 	.end-of-list-message {

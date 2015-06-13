@@ -62,6 +62,7 @@
 		&:nth-child(4) { transform: translate3d(0, -8px, 0); }
 		&:nth-child(5) { transform: translate3d(0, -10px, 0); }
 		&:nth-child(6) { transform: translate3d(0, -12px, 0); }
+		&:nth-child(7) { transform: translate3d(0, -14px, 0); }
 	}
 
 	.stager {
@@ -75,6 +76,7 @@
 			&:nth-child(4) { transition: all 260ms ease-out 140ms; }
 			&:nth-child(5) { transition: all 240ms ease-out 160ms; }
 			&:nth-child(6) { transition: all 220ms ease-out 180ms; }
+			&:nth-child(7) { transition: all 200ms ease-out 200ms; }
 		}
 	}
 }

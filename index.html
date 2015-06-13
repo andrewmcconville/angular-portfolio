@@ -12,26 +12,26 @@
     <link rel="stylesheet" type="text/css" href="shared/css/style.css">
 </head>
 
-<body id="js-body" ng-controller="appCtrl">
+<body id="js-body" ng-controller="appCtrl" ng-click="menuOpen = false">
     <header class="app-header">
         <div class="toolbar">
-            <button class="button button-secondary" ng-click="menuOpen = true">
+            <button class="button button-secondary" ng-click="menuOpen = true; $event.stopPropagation();">
                 <svg class="icon icon-menu" ng-class="{'spin': menuOpen}"><use xlink:href="shared/icon-sprite.svg#icon-menu"></use></svg>
             </button>
             <div class="title">Andrew McConville</div>
         </div>
         <nav class="tabs" ng-init="activeTab = 0">
             <button class="button" ng-class="{active: activeTab == 0}" ng-click="activeTab = 0">About Me</button>
-            <button class="button" ng-class="{active: activeTab == 1}" ng-click="activeTab = 1">Interfaces</button>
-            <button class="button" ng-class="{active: activeTab == 2}" ng-click="activeTab = 2">Infographics</button>
+            <button class="button" ng-class="{active: activeTab == 1}" ng-click="activeTab = 1; getWorks('interface')">Interfaces</button>
+            <button class="button" ng-class="{active: activeTab == 2}" ng-click="activeTab = 2; getWorks('infographic')">Infographics</button>
         </nav>
     </header>
 
     <section class="work-list" ng-class="{'hidden-on-mobile': isDetailsState}">
-        <ul masonry id="js-bricks" load-images="false" preserve-order masonry-options='{"transitionDuration": "320ms"}'>
-            <li class="work masonry-brick" masonry-tile ng-repeat="work in ::works" ui-sref="details({url: work.url})">
+        <ul class="cf">
+            <li class="work" ng-repeat="work in works" ui-sref="details({url: work.url})">
                 <div class="work-poster-container">
-                    <img class="work-poster" ng-src="wp-content/uploads/{{::work.poster.src}}-thumbnail.png" height="{{::work.poster.height/2}}" width="170" />
+                    <img class="work-poster" ng-src="wp-content/uploads/{{::work.poster.src}}-thumbnail.jpg" height="340" width="340" />
                 </div>
                 <p class="work-name">{{::work.name}}</p>
                 <p class="work-excerpt">{{::work.excerpt}}</p>
@@ -43,7 +43,7 @@
     </section>
 
     <article id="js-work-details" class="work-details" ng-show="isDetailsState">
-        <ui-view class="work-details-inner"></ui-view>
+        <div ui-view="details" class="work-details-inner"></div>
     </article>
 
     <nav class="app-menu" ng-show="menuOpen">
@@ -51,21 +51,26 @@
             <svg class="icon icon-arrow" ng-class="{'spin': menuOpen}"><use xlink:href="shared/icon-sprite.svg#icon-arrow"></use></svg>
         </button>
         <ul class="menu-links" ng-class="{'stager': menuOpen}">
-            <li class="menu-link">LinkedIn</li>
-            <li class="menu-link">Google</li>
-            <li class="menu-link">Resume</li>
             <li class="menu-link">About</li>
             <li class="menu-link">Interfaces</li>
             <li class="menu-link">Infographics</li>
+            <li class="menu-link">Resume</li>
+            <li class="menu-link">
+                <a href="https://www.linkedin.com/in/andrewmcconville" target="_blank">LinkedIn</a>
+            </li>
+            <li class="menu-link">
+                <a href="https://profiles.google.com/mcconvilleandrew/about" target="_blank">Google</a>
+            </li>
+            <li class="menu-link">
+                <a href="mailto:andrew@andrewmcconville.com">andrew@andrewmcconville.com</a>
+            </li>
         </ul>
     </nav>
 
-    <script src="shared/js/libs/jquery-2.1.4.min.js"></script>
-    <script src="shared/js/libs/masonry.pkgd.min.js"></script>
+    <script src="shared/js/libs/imagesloaded.pkgd.min.js"></script>
     <script src="shared/js/libs/angular.min.js"></script>
     <script src="shared/js/libs/angular-ui-router.min.js"></script>
     <script src="shared/js/libs/angular-animate.min.js"></script>
-    <script src="shared/js/libs/angular-masonry.min.js"></script>
     <script src="shared/js/libs/fastclick.js"></script>
     <script src="shared/js/libs/perfect-scrollbar.min.js"></script>
     <script src="shared/js/app.js"></script>

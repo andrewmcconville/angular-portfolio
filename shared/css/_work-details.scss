@@ -139,8 +139,6 @@
 		background-position: center center;
 		background-size: cover;
 		bottom: 8px;
-		box-shadow: $shadow-z-2;
-		//display: none;
 		left: 0;
 		position: absolute;
 		top: 0;
@@ -176,7 +174,11 @@
 	}
 
 	.work-body {
-		padding: 32px 32px 96px 32px;	
+		padding: 16px 16px 96px 16px;
+
+		@media(min-width: 888px) {
+			padding: 32px 32px 96px 32px;
+		}	
 	}
 
 	.work-figure {
@@ -184,15 +186,24 @@
 	}
 
 	.work-image {
-		float: left;
 		height: auto;
 		max-width: 750px;
 		//visibility: hidden;
 		width: 100%;
+
+		@media(min-width: 888px) {
+			float: left;		
+		}
 	}
 
 	.image-caption {
-		float: right;
-		width: 100px;
+		line-height: 16px;
+		margin-top: 4px;
+
+		@media(min-width: 888px) {
+			float: right;
+			margin-top: 0;
+			width: 100px;			
+		}
 	}
 }

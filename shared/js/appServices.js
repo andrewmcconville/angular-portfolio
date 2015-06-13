@@ -1,7 +1,7 @@
 angular
 	.module('portfolio')
     .factory('Works', function(){
-        var works = [
+        var allWorks = [
             {
                 name: "Mesmer",
                 category: "interface",
@@ -9,8 +9,7 @@ angular
                 date: 1348722000000,
                 url: "mesmer-interactive-degree-builder",
                 poster: {
-                    src: "2012/09/mesmer",
-                    height: 230
+                    src: "2012/09/mesmer"
                 },
                 blur: "2012/09/mesmer",
                 images: [
@@ -30,8 +29,7 @@ angular
                 excerpt: "Interactive infographic to U.S. census API in HTML, CSS & JS.",
                 url: "u-s-census-data-viwer",
                 poster: {
-                    src: "2013/05/census-data",
-                    height: 260
+                    src: "2013/05/census-data"
                 }
             },
             {
@@ -41,8 +39,7 @@ angular
                 date: 1308978000000,
                 url: "demographics-supersized-infographic",
                 poster: {
-                    src: "2011/12/demographics-supersized-infographic",
-                    height: 210
+                    src: "2011/12/demographics-supersized-infographic"
                 },
                 blur: "2011/12/demographics-supersized-infographic",
                 images: [
@@ -75,8 +72,7 @@ angular
                 date: 1324447200000,
                 url: "energy-life-cycle-of-coal",
                 poster: {
-                    src: "2011/12/great-lakes-infographic",
-                    height: 190
+                    src: "2011/12/great-lakes-infographic"
                 },
                 blur: "2011/12/great-lakes-infographic",
                 images: [
@@ -118,8 +114,7 @@ angular
                 excerpt: "Designed, prototyped and programmed swipe menu interactions.",
                 url: "brain-brawn-body",
                 poster: {
-                    src: "2013/07/brain-brawn-body",
-                    height: 430
+                    src: "2013/07/brain-brawn-body"
                 }
             },
             {
@@ -128,11 +123,12 @@ angular
                 excerpt: "Designed UI, UX and interactions along with in app prototyping.",
                 url: "uwm-mobile",
                 poster: {
-                    src: "2013/10/uwm-mobile",
-                    height: 400
+                    src: "2013/10/uwm-mobile"
                 }
             }
         ];
+
+        var works = allWorks;
 
         return {
             getWork: function(url){
@@ -155,7 +151,16 @@ angular
                     return works[index + 1].url
                 }
             },
-            getWorks: function(){
+            getWorks: function(category){
+                works = [];
+
+                for(var i = 0; i < allWorks.length; i++){
+                    if(allWorks[i].category === category){
+                        works.push(allWorks[i]);
+                    }
+
+                }
+
                 return works;
             }
         }
