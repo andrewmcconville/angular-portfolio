@@ -144,11 +144,15 @@ angular
             getPreviousURL: function(index){
                 if(works[index - 1]){
                     return works[index - 1].url
+                } else {
+                    return works[works.length - 1].url
                 }
             },
             getNextURL: function(index){
                 if(works[index + 1]){
                     return works[index + 1].url
+                } else {
+                    return works[0].url
                 }
             },
             getWorks: function(category){
