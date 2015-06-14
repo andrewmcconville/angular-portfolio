@@ -60,34 +60,6 @@ angular
                 ]
             },
             {
-                name: "Mesmer",
-                category: "interface",
-                excerpt: "Interactive, drag and drop, web-app providing students real-time data manipulation.",
-                date: 1348722000000,
-                url: "mesmer-interactive-degree-builder",
-                defaultImage: "2012/09/mesmer",
-                images: [
-                    {
-                        src: "2012/09/mesmer-ipad.jpg",
-                        caption: "Mesmer Interactive Degree Builder iPad interface",
-                        height: 1174
-                    },
-                    {
-                        src: "2012/09/mesmer-sidebar.jpg",
-                        caption: "Slide out sidebar containing the university course catalog. Departments and courses are quickly searchable via filtering search field.",
-                        height: 1174
-                    }
-                ]
-            },
-            {
-                name: "Census Viewer",
-                category: "interface",
-                excerpt: "Interactive infographic to U.S. census API in HTML, CSS & JS.",
-                date: 1368939600000,
-                url: "u-s-census-data-viwer",
-                defaultImage:  "2013/05/census-data"
-            },
-            {
                 name: "Demographics Supersized",
                 category: "infographic",
                 excerpt: "City demographics in Milwaukee vs McDonald’s spatial density.",
@@ -160,20 +132,145 @@ angular
                 ]
             },
             {
-                name: "Brain Brawn & Body",
-                category: "interface",
-                excerpt: "Designed, prototyped and programmed swipe menu interactions.",
-                date: 1373173200000,
-                url: "brain-brawn-body",
-                defaultImage: "2013/07/brain-brawn-body"
-            },
-            {
                 name: "UWM Mobile",
                 category: "interface",
                 excerpt: "Designed UI, UX and interactions along with in app prototyping.",
+                introduction: "I was given the task of completely redesigning the UWM Mobile app and decided to create a highly interactive experience. The home screen presents users with fresh data relevant to campus life. Where the previous version relied on text, the new version adds graphics and icons allowing users to quickly glean information while hastily rushing to class.",
                 date: 1379912400000,
                 url: "uwm-mobile",
-                defaultImage: "2013/10/uwm-mobile"
+                defaultImage: "2013/10/uwm-mobile",
+                images: [
+                    {
+                        src: "2013/10/uwm-mobile-app.jpg",
+                        caption: "UI, UX and interactions designed from the ground up. Programmed several interaction prototypes in app for testing across multiple mobile platforms.",
+                        height: 1000
+                    },
+                    {
+                        src: "2013/10/home-screen-menu.gif",
+                        caption: "Pseudo parallax home screen user interface. The static photo changes based on the users location, featuring various UWM landmarks.",
+                        height: 1000
+                    },
+                    {
+                        src: "2013/10/slide-menu.gif",
+                        caption: "Side by Side of actual interaction and testing prototype. I designed a horizontal menu system, then programmed a demo of it for iOS and Android.",
+                        height: 1000
+                    },
+                    {
+                        src: "2013/10/shuttle-bus-status.jpg",
+                        caption: "UWM shuttle shuttle status",
+                        height: 1000
+                    },
+                    {
+                        src: "2013/10/laundry-status.jpg",
+                        caption: "Prototyping possible display output of laundry services across campus.",
+                        height: 1000
+                    }
+                ]
+            },
+            {
+                name: "Mesmer",
+                category: "interface",
+                excerpt: "Interactive, drag and drop, web-app providing students real-time data manipulation.",
+                introduction: "Interactive, drag and drop, web-app that assists students and academic advisers with course planning and meeting degree requirements.",
+                date: 1348722000000,
+                url: "mesmer-interactive-degree-builder",
+                defaultImage: "2012/09/mesmer",
+                link: "mesmer.ly",
+                images: [
+                    {
+                        src: "2012/09/mesmer-ipad.png",
+                        caption: "Mesmer Interactive Degree Builder iPad interface",
+                        height: 846
+                    },
+                    {
+                        src: "2012/09/mesmer-sidebar.png",
+                        caption: "Slide out sidebar containing the university course catalog. Departments and courses are quickly searchable via filtering search field.",
+                        height: 846
+                    },
+                    {
+                        src: "2012/09/mesmer-progress.png",
+                        caption: "Slide down menu revels detail progress view.",
+                        height: 846
+                    },
+                    {
+                        src: "2012/09/brand-book-cover.jpg",
+                        caption: "Mesmer brand book cover. Featuring logo design, color inspiration, branding and user interface screenshots.",
+                        height: 1020
+                    },
+                    {
+                        src: "2012/09/mesmer-is-an-aerial-view.jpg",
+                        caption: "Mesmer is an aerial view. Every project needs a road map. Visualizing complex systems requires an elegant and intuitive user interface.",
+                        height: 510
+                    },
+                    {
+                        src: "2012/09/mesmer-is-finely-tuned-precision.jpg",
+                        caption: "Mesmer is finely tuned precision. Intuitively organizing and beautifully presented information systems with user friendly, interactive interfaces.",
+                        height: 510
+                    },
+                    {
+                        src: "2012/09/mesmer-focus-group.jpg",
+                        caption: "Focus groups, personas, beta testers and general review by students and faculty helped refine ease of use and feature set.",
+                        height: 510
+                    },
+                    {
+                        src: "2012/09/mesmer-is-your-personal-guide.jpg",
+                        caption: "Mesmer is your personal guide. Transforming project management into a visual, interactive experience by connecting people and data across time.",
+                        height: 510
+                    }
+                ]
+            },
+            {
+                name: "Census Viewer",
+                category: "interface",
+                excerpt: "Interactive infographic to U.S. census API in HTML, CSS & JS.",
+                introduction: "Interactive web-app featuring data from the U.S. Department of Commerce’s Census Bureau API. Census data fetched using AJAX via jQuery. Interactive map is rendered using SVG and the Raphaël.js data rendering library.",
+                date: 1368939600000,
+                url: "u-s-census-data-viwer",
+                defaultImage: "2013/05/census-data",
+                link: "censusdata.andrewmcconville.com",
+                images: [
+                    {
+                        src: "2013/05/us-census-data-viwer.jpg",
+                        caption: "Data pulled in via the Census API.",
+                        height: 840
+                    },
+                    {
+                        src: "2013/05/census-data-closeup.jpg",
+                        caption: "SVG and the Raphaël.js map create a truly scalable and pixel perfect interaction.",
+                        height: 840
+                    }
+                ]
+            },
+            {
+                name: "Brain Brawn & Body",
+                category: "interface",
+                excerpt: "Designed, prototyped and programmed swipe menu interactions.",
+                introduction: "Brain Brawn & Body is a website dedicated to the health and wellness of African American men. The app aims to bring targeted news and event information to users along with a journal for health tracking and health care finder.",
+                date: 1373173200000,
+                url: "brain-brawn-body",
+                defaultImage: "2013/07/brain-brawn-body",
+                images: [
+                    {
+                        src: "2013/07/brain-brawn-and-body-app.jpg",
+                        caption: "Brain Brawn and Body app startup screen.",
+                        height: 1000
+                    },
+                    {
+                        src: "2013/07/brain-brawn-and-body-app-blog.jpg",
+                        caption: "Website blog integration with mobile app.",
+                        height: 1000
+                    },
+                    {
+                        src: "2013/07/brain-brawn-body-health.jpg",
+                        caption: "User maintained health journal.",
+                        height: 1000
+                    },
+                    {
+                        src: "2013/07/brain-brawn-body-screenings.jpg",
+                        caption: "Medical information featuring: physician finder, prescription pricing, health surveys and health screening information.",
+                        height: 1000
+                    }
+                ]
             }
         ];
 

@@ -7,12 +7,19 @@ angular
 
 		$scope.work = $scope.currentWork.work;
 		$scope.index = $scope.currentWork.index;
+		$scope.hasLink = function(){
+			if($scope.work.link) {
+				return true;
+			} else {
+				return false;
+			}
+		};
 
 		document.addEventListener("keydown", previousNext);
 
 		function previousNext(e){			
-			//if escape key or down arrow go to category list
-			if(e.keyCode === 27 || e.keyCode === 40){
+			//if escape key go to category list
+			if(e.keyCode === 27){
 				$state.go($scope.category);
 				document.removeEventListener("keydown", previousNext);
 			}

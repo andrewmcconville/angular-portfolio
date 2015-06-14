@@ -6,12 +6,12 @@ app.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider,
 
 	$stateProvider
 		.state('home', {
-			url: '/'
-		})
-		.state('about', {
-			url: '/about',
+			url: '/',
 			template: 'Andrew'
 		})
+		// .state('resume', {
+		// 	url: '/resume'
+		// })
 		.state('interface', {
 			url: '/interfaces',
 			templateUrl: 'components/workListTemplate.html',

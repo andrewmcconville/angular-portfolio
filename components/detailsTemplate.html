@@ -21,4 +21,8 @@
         <img class="work-image" ng-src="wp-content/uploads/{{::image.src}}" width="1500" height="{{::image.height}}" />
         <figcaption class="image-caption font-caption">{{::image.caption}}</figcaption>
     </figure>
+    <p class="external-link" ng-if="hasLink()">
+        View the project at <br />
+        <a href="http://{{::work.link}}" target="_blank">{{::work.link}}</a>
+    </p>
 </section>

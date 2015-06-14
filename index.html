@@ -18,10 +18,12 @@
             <button class="button button-secondary" ng-click="menuOpen = true; $event.stopPropagation();">
                 <svg class="icon icon-menu" ng-class="{'spin': menuOpen}"><use xlink:href="shared/icon-sprite.svg#icon-menu"></use></svg>
             </button>
-            <div class="title">Andrew McConville</div>
+            <div class="title">
+                <a ui-sref="home">Andrew McConville</a>
+            </div>
         </div>
         <nav class="tabs" ng-init="activeTab = 0">
-            <button class="button" ui-sref-active="active" ui-sref="about">About Me</button>
+            <button class="button" ui-sref-active="active" ui-sref="home">Home</button>
             <button class="button" ui-sref-active="active" ui-sref="interface">Interfaces</button>
             <button class="button" ui-sref-active="active" ui-sref="infographic">Infographics</button>
         </nav>
@@ -34,21 +36,29 @@
             <svg class="icon icon-arrow" ng-class="{'spin': menuOpen}"><use xlink:href="shared/icon-sprite.svg#icon-arrow"></use></svg>
         </button>
         <ul class="menu-links" ng-class="{'stager': menuOpen}">
-            <li class="menu-link" ui-sref="about">
-                <a ui-sref="about">About</a></li>
-            <li class="menu-link" ui-sref="interface">
-                <a ui-sref="interface">Interfaces</a></li>
-            <li class="menu-link" ui-sref="infographic">
-                <a ui-sref="infographic">Infographics</a></li>
-            <li class="menu-link">Resume</li>
-            <li class="menu-link">
-                <a href="https://www.linkedin.com/in/andrewmcconville" target="_blank">LinkedIn</a>
+            <li class="menu-li">
+                <a class="link" ui-sref="home">Home</a>
             </li>
-            <li class="menu-link">
-                <a href="https://profiles.google.com/mcconvilleandrew/about" target="_blank">Google</a>
+            <li class="menu-li">
+                <a class="link" ui-sref="interface">Interfaces</a>
             </li>
-            <li class="menu-link">
-                <a href="mailto:andrew@andrewmcconville.com">andrew@andrewmcconville.com</a>
+            <li class="menu-li">
+                <a class="link" ui-sref="infographic">Infographics</a>
+            </li>
+            <li class="menu-li">
+                <a class="link" href="../resume-mcconville.pdf">Resume</a>
+            </li>
+            <li class="menu-li">
+                <hr class="hr" />
+            </li>
+            <li class="menu-li">
+                <a class="link" href="https://www.linkedin.com/in/andrewmcconville" target="_blank">LinkedIn</a>
+            </li>
+            <li class="menu-li">
+                <a class="link" href="https://profiles.google.com/mcconvilleandrew/about" target="_blank">Google+</a>
+            </li>
+            <li class="menu-li">
+                <a class="link" href="mailto:andrew@andrewmcconville.com">andrew@andrewmcconville.com</a>
             </li>
         </ul>
     </nav>

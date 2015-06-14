@@ -51,6 +51,11 @@
 		color: rgba(255, 255, 255, .75);
 		display: inline-block;
 		vertical-align: middle;
+
+		a {
+			color: rgba(255, 255, 255, .75);
+			text-decoration: none;
+		}
 	}
 
 	.tabs {
