@@ -1,0 +1,18 @@
+<section class="work-list" ng-class="{'hidden-on-mobile': isDetailsState}">
+    <ul class="cf">
+        <li class="work" ng-repeat="work in works" ui-sref="{{category}}.details({url: work.url})">
+            <div class="work-poster-container">
+                <img class="work-poster" ng-src="wp-content/uploads/{{::work.poster.src}}-thumbnail.jpg" height="340" width="340" />
+            </div>
+            <p class="work-name">{{::work.name}}</p>
+            <p class="work-excerpt">{{::work.excerpt}}</p>
+        </li>
+    </ul>
+    <div class="end-of-list-message">
+        <p ng-click="console()">This is the end, email me!</p>
+    </div>
+</section>
+
+<article id="js-work-details" class="work-details" ng-show="isDetailsState">
+    <div ui-view class="work-details-inner"></div>
+</article>

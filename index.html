@@ -21,39 +21,25 @@
             <div class="title">Andrew McConville</div>
         </div>
         <nav class="tabs" ng-init="activeTab = 0">
-            <button class="button" ng-class="{active: activeTab == 0}" ng-click="activeTab = 0">About Me</button>
-            <button class="button" ng-class="{active: activeTab == 1}" ng-click="activeTab = 1; getWorks('interface')">Interfaces</button>
-            <button class="button" ng-class="{active: activeTab == 2}" ng-click="activeTab = 2; getWorks('infographic')">Infographics</button>
+            <button class="button" ui-sref-active="active" ui-sref="about">About Me</button>
+            <button class="button" ui-sref-active="active" ui-sref="interface">Interfaces</button>
+            <button class="button" ui-sref-active="active" ui-sref="infographic">Infographics</button>
         </nav>
     </header>
 
-    <section class="work-list" ng-class="{'hidden-on-mobile': isDetailsState}">
-        <ul class="cf">
-            <li class="work" ng-repeat="work in works" ui-sref="details({url: work.url})">
-                <div class="work-poster-container">
-                    <img class="work-poster" ng-src="wp-content/uploads/{{::work.poster.src}}-thumbnail.jpg" height="340" width="340" />
-                </div>
-                <p class="work-name">{{::work.name}}</p>
-                <p class="work-excerpt">{{::work.excerpt}}</p>
-            </li>
-        </ul>
-        <div class="end-of-list-message">
-            <p ng-click="console()">This is the end, email me!</p>
-        </div>
-    </section>
-
-    <article id="js-work-details" class="work-details" ng-show="isDetailsState">
-        <div ui-view="details" class="work-details-inner"></div>
-    </article>
+    <div ui-view></div>
 
     <nav class="app-menu" ng-show="menuOpen">
         <button class="button button-secondary button-back" ng-click="menuOpen = false">
             <svg class="icon icon-arrow" ng-class="{'spin': menuOpen}"><use xlink:href="shared/icon-sprite.svg#icon-arrow"></use></svg>
         </button>
         <ul class="menu-links" ng-class="{'stager': menuOpen}">
-            <li class="menu-link">About</li>
-            <li class="menu-link">Interfaces</li>
-            <li class="menu-link">Infographics</li>
+            <li class="menu-link" ui-sref="about">
+                <a ui-sref="about">About</a></li>
+            <li class="menu-link" ui-sref="interface">
+                <a ui-sref="interface">Interfaces</a></li>
+            <li class="menu-link" ui-sref="infographic">
+                <a ui-sref="infographic">Infographics</a></li>
             <li class="menu-link">Resume</li>
             <li class="menu-link">
                 <a href="https://www.linkedin.com/in/andrewmcconville" target="_blank">LinkedIn</a>
@@ -75,6 +61,8 @@
     <script src="shared/js/libs/perfect-scrollbar.min.js"></script>
     <script src="shared/js/app.js"></script>
     <script src="shared/js/appServices.js"></script>
+    <script src="components/detailsController.js"></script>
+    <script src="components/workListController.js"></script>
     <script>
         if('addEventListener' in document){
             document.addEventListener('DOMContentLoaded', function(){
@@ -99,8 +87,8 @@
         if(isMobile() || window.innerWidth < 888){
             //do not use perfect scrollbar on touch devices
         } else {
-            var workDetails = document.getElementById('js-work-details');
-            Ps.initialize(workDetails, {});
+            //var workDetails = document.getElementById('js-work-details');
+            //Ps.initialize(workDetails, {});
 
             //var browserBody = document.getElementById('js-body');
             //Ps.initialize(browserBody, {});

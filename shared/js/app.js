@@ -8,42 +8,39 @@ app.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider,
 		.state('home', {
 			url: '/'
 		})
-		.state('interfaces', {
-			url: 'interfaces',
-			controller: function($scope, Works){
-
-			}
+		.state('about', {
+			url: '/about',
+			template: 'Andrew'
 		})
-		.state('details', {
+		.state('interface', {
+			url: '/interfaces',
+			templateUrl: 'components/workListTemplate.html',
+			controller: 'workListCtrl'
+		})
+		.state('infographic', {
+			url: '/infographics',
+			templateUrl: 'components/workListTemplate.html',
+			controller: 'workListCtrl'
+		})
+		.state('interface.details', {
 			url: '/:url',
-			views: {
-				'details': {
-					templateUrl: 'components/details.html',
-					controller: function($scope, $timeout, $state, $stateParams, Works){
-						var currentWork = Works.getWork($stateParams.url);
-						$scope.previousWorkURL = Works.getPreviousURL(currentWork.index);
-						$scope.nextWorkURL = Works.getNextURL(currentWork.index);
-
-						$scope.work = currentWork.work;
-						$scope.index = currentWork.index;
-					}
-				}
-			}
+			templateUrl: 'components/detailsTemplate.html',
+			controller: 'detailsCtrl'
+		})
+		.state('infographic.details', {
+			url: '/:url',
+			templateUrl: 'components/detailsTemplate.html',
+			controller: 'detailsCtrl'
 		});
 }]);
 
-app.controller('appCtrl', ['$rootScope', '$scope', '$state', '$stateParams', '$timeout', 'Works', function($rootScope, $scope, $state, $stateParams, $timeout, Works) {
+app.controller('appCtrl', ['$rootScope', '$scope', '$state', '$stateParams', function($rootScope, $scope, $state, $stateParams) {
 	
 	$scope.isDetailsState = false;
 	$scope.menuOpen = false;
 
-	$scope.getWorks = function(category){
-		$scope.works = Works.getWorks(category);
-	};
-	//$scope.works = $scope.getWorks('infographic');
-
 	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
-		if(toState.name === 'details'){
+		if(toState.controller === 'detailsCtrl'){
 			$scope.isDetailsState = true;
 			window.scroll(0, 0);
 		} else {

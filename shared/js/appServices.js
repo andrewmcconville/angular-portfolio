@@ -152,13 +152,15 @@ angular
                 }
             },
             getWorks: function(category){
-                works = [];
+                if(category){
+                    works = [];
 
-                for(var i = 0; i < allWorks.length; i++){
-                    if(allWorks[i].category === category){
-                        works.push(allWorks[i]);
+                    for(var i = 0; i < allWorks.length; i++){
+                        if(allWorks[i].category === category){
+                            works.push(allWorks[i]);
+                        }
+
                     }
-
                 }
 
                 return works;

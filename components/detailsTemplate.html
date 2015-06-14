@@ -1,10 +1,10 @@
 <nav class="detail-toolbar">
-    <a class="button button-secondary button-back" ui-sref="home" ng-click="reloadMasonry(); updateState();">
+    <a class="button button-secondary button-back" ui-sref="{{category}}">
         <svg class="icon icon-arrow"><use xlink:href="shared/icon-sprite.svg#icon-arrow"></use></svg>
     </a>
     <div class="previous-next-buttons">
-        <a class="button button-secondary" ui-sref="details({url: previousWorkURL})">Previous</a>
-        <a class="button button-secondary" ui-sref="details({url: nextWorkURL})">Next</a>
+        <a class="button button-secondary" ui-sref="{{category}}.details({url: previousWorkURL})">Previous</a>
+        <a class="button button-secondary" ui-sref="{{category}}.details({url: nextWorkURL})">Next</a>
     </div>
 </nav>
 <header class="work-header">
