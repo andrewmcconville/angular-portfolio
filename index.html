@@ -7,13 +7,13 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Andrew McConville</title>
 
-    <style>*{box-sizing:border-box;}body{margin:0;}a,button{outline:0;padding:0;}h1,h2,h3,h4,h5,h6,p,a,img,article,aside,figure,figcaption,footer,header,menu,nav,section,summary,time,ul{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block}ol,ul{list-style:none}</style>
+    <style>*{box-sizing:border-box;}body{margin:0;}.ng-cloak{display: none !important;}a,button{outline:0;padding:0;}h1,h2,h3,h4,h5,h6,p,a,img,article,aside,figure,figcaption,footer,header,menu,nav,section,summary,time,ul{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block}ol,ul{list-style:none}</style>
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="shared/css/style.css">
 </head>
 
 <body id="js-body" ng-controller="appCtrl" ng-click="menuOpen = false">
-    <header class="app-header">
+    <header class="app-header" ng-class="{'hidden-on-mobile': isDetailsState}">
         <div class="toolbar">
             <button class="button button-secondary" ng-click="menuOpen = true; $event.stopPropagation();">
                 <svg class="icon icon-menu" ng-class="{'spin': menuOpen}"><use xlink:href="shared/icon-sprite.svg#icon-menu"></use></svg>
@@ -29,7 +29,7 @@
 
     <div ui-view></div>
 
-    <nav class="app-menu" ng-show="menuOpen">
+    <nav class="app-menu ng-cloak" ng-show="menuOpen">
         <button class="button button-secondary button-back" ng-click="menuOpen = false">
             <svg class="icon icon-arrow" ng-class="{'spin': menuOpen}"><use xlink:href="shared/icon-sprite.svg#icon-arrow"></use></svg>
         </button>
@@ -68,30 +68,6 @@
             document.addEventListener('DOMContentLoaded', function(){
                 FastClick.attach(document.body);
             }, false);
-        }
-
-        function isMobile(){ 
-            if( navigator.userAgent.match(/Android/i)
-             || navigator.userAgent.match(/webOS/i)
-             || navigator.userAgent.match(/iPhone/i)
-             || navigator.userAgent.match(/iPad/i)
-             || navigator.userAgent.match(/iPod/i)
-             || navigator.userAgent.match(/BlackBerry/i)
-             || navigator.userAgent.match(/Windows Phone/i)){
-                return true;
-            } else {
-                return false;
-            }
-        }
-
-        if(isMobile() || window.innerWidth < 888){
-            //do not use perfect scrollbar on touch devices
-        } else {
-            //var workDetails = document.getElementById('js-work-details');
-            //Ps.initialize(workDetails, {});
-
-            //var browserBody = document.getElementById('js-body');
-            //Ps.initialize(browserBody, {});
         }
     </script>
 </body>

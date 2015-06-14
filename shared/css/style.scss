@@ -14,11 +14,24 @@
 
 html {
 	-webkit-tap-highlight-color: transparent;
+
+	@media(min-width: 888px) {
+		height: 100%;
+	}
 }
 
 body {
 	background-color: $slate-50;
-	overflow-y: scroll; 
+	border-top: 54px solid $slate-500;
+	overflow-x: hidden;
+	overflow-y: scroll;
+
+	@media(min-width: 888px) {
+		height: 100%;
+		overflow: hidden;
+		overflow-x: hidden;
+		overflow-y: hidden;
+	}
 }
 
 img {

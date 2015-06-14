@@ -20,38 +20,27 @@
 		overflow: hidden;
 	}
 
-	.work-details-background,
 	.work-details-inner {
 		background-color: #fff;
 		max-width: 940px;
 		min-height: 100%;
-		top: 54px;
-	}
-
-	.work-details-background {
-		display: none;
-		position: absolute;
-		width: 100%;
-		z-index: 0;
-
-		@media(min-width: 888px) {
-			left: 10px;
-			right: 8px;
-		}
 	}
 
 	.work-details-inner {
 		left: 0;
 		opacity: 1;
+		padding-top: 54px;
 		position: absolute;
 		right: 0;
+		transform: translate3d(0, 0, 0);
+			transition: all 320ms ease-out;
 		z-index: 1;
 
 		@media(min-width: 888px) {
 			box-shadow: $shadow-z-3;
 			left: 10px;
-			right: 7px;	
-			transition: all 320ms; 		
+			padding-top: 0;
+			right: 7px;
 		}
 
 		&.ng-enter {
@@ -188,7 +177,7 @@
 	.work-image {
 		height: auto;
 		max-width: 750px;
-		//visibility: hidden;
+		//transform: translate3d(0, 0, 0);
 		width: 100%;
 
 		@media(min-width: 888px) {
