@@ -10,9 +10,8 @@
 		bottom: 0;
 		display: block;
 		left: 350px;
-		padding: 54px 7px 0 10px;
+		padding-top: 54px;
 		position: fixed;
-		right: 8px;
 	}
 
 	&.ps-container {
@@ -22,25 +21,22 @@
 
 	.work-details-inner {
 		background-color: #fff;
-		max-width: 940px;
-		min-height: 100%;
-	}
-
-	.work-details-inner {
 		left: 0;
+		max-width: 1072px;
+		min-height: 100%;
 		opacity: 1;
 		padding-top: 54px;
 		position: absolute;
 		right: 0;
-		transform: translate3d(0, 0, 0);
-			transition: all 320ms ease-out;
+		//transform: translate3d(0, 0, 0);
+		transition: all 320ms ease-out;
 		z-index: 1;
 
 		@media(min-width: 888px) {
 			box-shadow: $shadow-z-3;
 			left: 10px;
 			padding-top: 0;
-			right: 7px;
+			right: 8px;
 		}
 
 		&.ng-enter {
@@ -148,12 +144,12 @@
 	.font-subheadline,
 	.time {
 		color: rgba(0, 0, 0, .5);
-		line-height: 16px;
 		text-shadow: 0 0 12px rgba(255, 255, 255, .5);
 	}
 
 	.font-subheadline {
 		font-size: 18px;
+		line-height: 18px;
 		margin-bottom: 4px;
 	}
 
@@ -163,36 +159,54 @@
 	}
 
 	.work-body {
-		padding: 16px 16px 96px 16px;
+		padding: 16px;
+		@media(min-width: 846px) { padding: 32px; }
+		@media(min-width: 1280px) { padding: 48px; }
+		@media(min-width: 1360px) { padding: 64px; }
+	}
 
-		@media(min-width: 888px) {
-			padding: 32px 32px 96px 32px;
-		}	
+	.work-intro  {
+		margin: 0 auto 32px auto;
+		max-width: 750px;
+
+		@media(min-width: 1326px) { float: left; }
 	}
 
 	.work-figure {
-		margin-bottom: 32px;
+		margin-bottom: 48px;
 	}
 
 	.work-image {
 		height: auto;
+		margin: auto;
 		max-width: 750px;
 		//transform: translate3d(0, 0, 0);
 		width: 100%;
 
-		@media(min-width: 888px) {
-			float: left;		
-		}
+		@media(min-width: 1326px) { float: left; }
 	}
 
 	.image-caption {
 		line-height: 16px;
+		margin: auto;
 		margin-top: 4px;
+		max-width: 750px;
 
-		@media(min-width: 888px) {
-			float: right;
+		@media(min-width: 1326px) {
+			float: left;
+			margin-left: 16px;
 			margin-top: 0;
-			width: 100px;			
+		}
+
+		@media(min-width: 1326px) and (max-width: 1335px) { width: 96px; }
+		@media(min-width: 1336px) and (max-width: 1347px) { width: 106px; }
+		@media(min-width: 1348px) and (max-width: 1359px) { width: 118px; }
+		@media(min-width: 1360px) and (max-width: 1383px) { width: 96px; }
+		@media(min-width: 1384px) and (max-width: 1405px) { width: 120px; }
+		@media(min-width: 1406px) and (max-width: 1429px) { width: 144px; }
+		@media(min-width: 1430px) {
+			margin-left: 24px;
+			width: 160px;
 		}
 	}
 }

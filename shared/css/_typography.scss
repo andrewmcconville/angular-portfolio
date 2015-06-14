@@ -5,9 +5,14 @@ body {
 
 .font-headline {
 	color: rgba(0, 0, 0, .666);
-	font-size: 46px;
+	font-size: 42px;
 	font-weight: 200;
-	line-height: 46px;
+	line-height: 42px;
+
+	@media(min-width: 536px) {
+		font-size: 46px;
+		line-height: 46px;
+	}
 }
 
 .font-caption {

@@ -2,7 +2,7 @@
     <ul class="cf">
         <li class="work" ng-repeat="work in works" ui-sref="{{category}}.details({url: work.url})">
             <div class="work-poster-container">
-                <img class="work-poster" ng-src="wp-content/uploads/{{::work.poster.src}}-thumbnail.jpg" height="340" width="340" />
+                <img class="work-poster" ng-src="wp-content/uploads/{{::work.defaultImage}}-thumbnail.jpg" height="340" width="340" />
             </div>
             <p class="work-name">{{::work.name}}</p>
             <p class="work-excerpt">{{::work.excerpt}}</p>

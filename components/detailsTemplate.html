@@ -8,7 +8,7 @@
     </div>
 </nav>
 <header class="work-header">
-    <div class="header-background" style="background-image: url(wp-content/uploads/{{::work.blur}}-blur.jpg);"></div>
+    <div class="header-background" style="background-image: url(wp-content/uploads/{{::work.defaultImage}}-blur.jpg);"></div>
     <div class="header-foreground">
         <h1 class="font-headline">{{::work.name}}</h1>
         <h2 class="font-subheadline">{{::work.excerpt}}</h2>
@@ -16,8 +16,9 @@
     </div>
 </header>
 <section class="work-body">
+    <p class="work-intro">{{::work.introduction}}</p>
     <figure class="work-figure cf" ng-repeat="image in ::work.images">
-        <img class="work-image" ng-src="wp-content/uploads/{{::image.src}}" width="750" height="{{::image.height}}" />
+        <img class="work-image" ng-src="wp-content/uploads/{{::image.src}}" width="1500" height="{{::image.height}}" />
         <figcaption class="image-caption font-caption">{{::image.caption}}</figcaption>
     </figure>
 </section>
