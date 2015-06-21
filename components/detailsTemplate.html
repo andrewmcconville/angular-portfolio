@@ -10,13 +10,17 @@
 <header class="work-header">
     <div class="header-background" style="background-image: url(wp-content/uploads/{{::work.defaultImage}}-blur.jpg);"></div>
     <div class="header-foreground">
-        <h1 class="font-headline">{{::work.name}}</h1>
-        <h2 class="font-subheadline">{{::work.excerpt}}</h2>
-        <time class="time">{{::work.date | date:'MMMM d, yyyy'}}</time>
+        <h1 class="font-headline" itemprop="name">{{::work.name}}</h1>
+        <h2 class="font-subheadline" itemprop="headline">{{::work.excerpt}}</h2>
+        <time class="time" datetime="{{::work.date | date: 'yyyy-MM-ddTHH:mm:ss'}}" itemprop="datePublished" content="{{::work.date | date: 'yyyy-MM-ddTHH:mm:ss'}}">{{::work.date | date:'MMMM d, yyyy'}}</time>
+        <span class="pipe">|</span> 
+        <a class="category" ui-sref="{{::work.category}}" itemprop="genre">{{::work.category}}</a>
+        <span class="pipe">|</span> 
+        <a class="author" href="https://plus.google.com/+AndrewMcConville/" rel="author" itemprop="author" target="_blank">Andrew McConville</a>
     </div>
 </header>
 <section class="work-body">
-    <p class="work-intro">{{::work.introduction}}</p>
+    <p class="work-intro" itemprop="description">{{::work.introduction}}</p>
     <figure class="work-figure cf" ng-repeat="image in ::work.images">
         <img class="work-image" ng-src="wp-content/uploads/{{::image.src}}" width="1500" height="{{::image.height}}" />
         <figcaption class="image-caption font-caption">{{::image.caption}}</figcaption>

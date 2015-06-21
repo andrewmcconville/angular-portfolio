@@ -313,17 +313,40 @@ body {
   .work-details .font-headline {
     margin-bottom: 16px;
     text-shadow: 0 0 24px white; }
-  .work-details .font-subheadline,
-  .work-details .time {
-    color: rgba(0, 0, 0, 0.5);
-    text-shadow: 0 0 12px rgba(255, 255, 255, 0.5); }
   .work-details .font-subheadline {
     font-size: 18px;
-    line-height: 18px;
-    margin-bottom: 4px; }
-  .work-details .time {
+    line-height: 20px;
+    margin-bottom: 12px; }
+  .work-details .time,
+  .work-details .author,
+  .work-details .category {
+    display: block;
     font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    text-decoration: none;
+    text-transform: capitalize; }
+    @media (min-width: 480px) {
+      .work-details .time,
+      .work-details .author,
+      .work-details .category {
+        display: inline; } }
+  .work-details .time {
+    color: rgba(0, 0, 0, 0.6); }
+  .work-details .category {
+    color: rgba(0, 0, 0, 0.55); }
+  .work-details .author {
+    color: rgba(0, 0, 0, 0.5); }
+  .work-details .pipe {
+    color: rgba(0, 0, 0, 0.2);
+    display: none;
+    line-height: 16px;
+    font-size: 20px;
     font-weight: 300; }
+    @media (min-width: 480px) {
+      .work-details .pipe {
+        display: inline;
+        margin: 0 4px; } }
   .work-details .work-body {
     padding: 16px; }
     @media (min-width: 846px) {

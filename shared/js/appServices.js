@@ -7,7 +7,7 @@ angular
                 category: "infographic",
                 excerpt: "Information gathering on the viability and need for interactive degree tracking software.",
                 introduction: "Degree planning has yet to be modernized and is still largely done with pen and paper. Many students even choose to rely solely on what their advisers recommend, which can vary widely given that more than 75% of students will have multiple advisers over the course of their education. The data gathered in this infographic was used to determine the need for a degree planning web app and if students has access to the technology required to use the app.",
-                date: 1348462800000,
+                date: '2012-09-24T19:31:37-05:00',
                 url: "mesmer-infographic",
                 defaultImage: "2013/10/mesmer-infographic",
                 images: [
@@ -38,7 +38,7 @@ angular
                 category: "infographic",
                 excerpt: "Income and expense vs hours worked and credits enrolled.",
                 introduction: "The Personal Timeline infographic displays income and employment along side expenses and enrolled college credits. Narrative and metaphor created with plant imagery were used to convey a sense of time and growth.",
-                date: 1308373200000,
+                date: '2011-06-18T12:17:41-05:00',
                 url: "personal-timeline-infographic",
                 defaultImage: "2011/12/personal-timeline",
                 images: [
@@ -64,7 +64,7 @@ angular
                 category: "infographic",
                 excerpt: "City demographics in Milwaukee vs McDonald’s spatial density.",
                 introduction: "Demographics supersized is an infographic comparing the income, education, unemployment and crime rates of the cities in Milwaukee county along side the geographical locations of McDonald’s restaurants.",
-                date: 1308978000000,
+                date: '2011-06-25T12:58:36-05:00',
                 url: "demographics-supersized-infographic",
                 defaultImage: "2011/12/demographics-supersized-infographic",
                 images: [
@@ -95,7 +95,7 @@ angular
                 category: "infographic",
                 excerpt: "Visualizing the movement and consumption of coal reserves.",
                 introduction: "The Great Lakes infographic highlights the lifecycle of coal, from extraction to use, and the dependency of the Great Lakes states on Wyoming coal. The map of Wyoming and the Great Lakes connected by railways creates a narrative of process and shows dependency from one region to another. Color is used heavily to unite spatially diffused data objects; connecting, for example, red colored power plant locations on the map to red data relating to power production.",
-                date: 1324447200000,
+                date: '2011-12-21T11:34:06-05:00',
                 url: "energy-life-cycle-of-coal-infographic",
                 defaultImage: "2011/12/great-lakes-infographic",
                 images: [
@@ -136,7 +136,7 @@ angular
                 category: "interface",
                 excerpt: "Designed UI, UX and interactions along with in app prototyping.",
                 introduction: "I was given the task of completely redesigning the UWM Mobile app and decided to create a highly interactive experience. The home screen presents users with fresh data relevant to campus life. Where the previous version relied on text, the new version adds graphics and icons allowing users to quickly glean information while hastily rushing to class.",
-                date: 1379912400000,
+                date: '2013-09-23T20:07:54-05:00',
                 url: "uwm-mobile",
                 defaultImage: "2013/10/uwm-mobile",
                 images: [
@@ -172,7 +172,7 @@ angular
                 category: "interface",
                 excerpt: "Interactive, drag and drop, web-app providing students real-time data manipulation.",
                 introduction: "Interactive, drag and drop, web-app that assists students and academic advisers with course planning and meeting degree requirements.",
-                date: 1348722000000,
+                date: '2012-09-27T18:21:30-05:00',
                 url: "mesmer-interactive-degree-builder",
                 defaultImage: "2012/09/mesmer",
                 link: "mesmer.ly",
@@ -224,7 +224,7 @@ angular
                 category: "interface",
                 excerpt: "Interactive infographic to U.S. census API in HTML, CSS & JS.",
                 introduction: "Interactive web-app featuring data from the U.S. Department of Commerce’s Census Bureau API. Census data fetched using AJAX via jQuery. Interactive map is rendered using SVG and the Raphaël.js data rendering library.",
-                date: 1368939600000,
+                date: '2013-05-19T20:05:31-05:00',
                 url: "u-s-census-data-viwer",
                 defaultImage: "2013/05/census-data",
                 link: "censusdata.andrewmcconville.com",
@@ -246,7 +246,7 @@ angular
                 category: "interface",
                 excerpt: "Designed, prototyped and programmed swipe menu interactions.",
                 introduction: "Brain Brawn & Body is a website dedicated to the health and wellness of African American men. The app aims to bring targeted news and event information to users along with a journal for health tracking and health care finder.",
-                date: 1373173200000,
+                date: '2013-07-07T20:35:04-05:00',
                 url: "brain-brawn-body",
                 defaultImage: "2013/07/brain-brawn-body",
                 images: [
@@ -275,7 +275,7 @@ angular
         ];
 
         allWorks = allWorks.sort(function(a, b) {
-            return b.date - a.date;
+            return Date.parse(b.date) - Date.parse(a.date);
         });
 
         var works = allWorks;

@@ -1,18 +1,47 @@
 ﻿<!DOCTYPE html>
-<html lang="en" ng-app="portfolio">
+<html lang="en" ng-app="portfolio" ng-controller="appCtrl" itemscope itemtype="http://schema.org/WebPage" xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
     <meta charset="utf-8">
+    <!-- <meta name="fragment" content="!"> -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimal-ui" />
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>Andrew McConville</title>
-
     <style>*{box-sizing:border-box;}body{margin:0;}.ng-cloak{display: none !important;}a,button{outline:0;padding:0;}h1,h2,h3,h4,h5,h6,p,a,img,article,aside,figure,figcaption,footer,header,menu,nav,section,summary,time,ul{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block}ol,ul{list-style:none}</style>
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="shared/css/style.css">
+
+    <title>Andrew McConville</title>
+
+    <link rel="canonical" href="http://andrewmcconville.com/" />
+    <meta name="author" content="Andrew McConville" />
+    <meta name="description" content="" />
+
+    <link rel="author" href="https://plus.google.com/+AndrewMcConville/" />
+    <meta itemprop="name" content="" />
+    <meta itemprop="description" content="" />
+    <meta itemprop="image" content="" />
+
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Andrew McConville" />
+    <meta property="article:author" content="https://www.facebook.com/andrew.d.mcconville" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="http://andrewmcconville.com/" />
+    <meta property="article:section" content="" />
+    <meta property="article:published_time" content="{{work.date | date: 'yyyy-MM-ddTHH:mm:ss+00:00'}}" />
+    <meta property="og:image" content="" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@drew_mcconville" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="" />
+
+    <base href="http://localhost/angular-portfolio/" />
 </head>
 
-<body id="js-body" ng-controller="appCtrl" ng-click="menuOpen = false">
+<body id="js-body" ng-click="menuOpen = false">
     <header class="app-header" ng-class="{'hidden-on-mobile': isDetailsState}">
         <div class="toolbar">
             <button class="button button-secondary" ng-click="menuOpen = true; $event.stopPropagation();">
@@ -55,7 +84,7 @@
                 <a class="link" href="https://www.linkedin.com/in/andrewmcconville" target="_blank">LinkedIn</a>
             </li>
             <li class="menu-li">
-                <a class="link" href="https://profiles.google.com/mcconvilleandrew/about" target="_blank">Google+</a>
+                <a class="link" href="https://plus.google.com/+AndrewMcConville/" target="_blank">Google+</a>
             </li>
             <li class="menu-li">
                 <a class="link" href="mailto:andrew@andrewmcconville.com">andrew@andrewmcconville.com</a>
@@ -73,12 +102,13 @@
     <script src="shared/js/appServices.js"></script>
     <script src="components/detailsController.js"></script>
     <script src="components/workListController.js"></script>
-    <script>
+    <script type="text/javascript">
         if('addEventListener' in document){
             document.addEventListener('DOMContentLoaded', function(){
                 FastClick.attach(document.body);
             }, false);
         }
     </script>
+    <script type="text/javascript">//var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-22996129-1']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();</script>
 </body>
 </html>

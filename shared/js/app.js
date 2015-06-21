@@ -1,6 +1,6 @@
 var app = angular.module('portfolio', ['ui.router', 'ngAnimate']);
 
-app.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider){
+app.config(['$urlRouterProvider', '$stateProvider', '$locationProvider', function($urlRouterProvider, $stateProvider, $locationProvider){
 	$urlRouterProvider
 		.otherwise('/');
 
@@ -32,6 +32,9 @@ app.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider,
 			templateUrl: 'components/detailsTemplate.html',
 			controller: 'detailsCtrl'
 		});
+
+	//$locationProvider.html5Mode(true);
+	//$locationProvider.hashPrefix('!');
 }]);
 
 app.controller('appCtrl', ['$rootScope', '$scope', '$state', '$stateParams', function($rootScope, $scope, $state, $stateParams) {
