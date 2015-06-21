@@ -34,4 +34,15 @@ angular
 				document.removeEventListener("keydown", previousNext);
 			}
 		}
+
+        $scope.$emit('updateMetaData', {
+            'canonical': '/' + $scope.work.category + 's/' + $scope.work.url + '/',
+            'pageTitle': $scope.work.name,
+            'title': $scope.work.name + ' by Andrew McConville',
+            'description': $scope.work.excerpt,
+            'image': 'http://andrewmcconville.com/wp-content/uploads/' + $scope.work.defaultImage + '-thumbnail.jpg',
+            'name': $scope.work.name,
+            'section': $scope.work.category,
+            'date': $scope.work.date
+        });
 	}]);

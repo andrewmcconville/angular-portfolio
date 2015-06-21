@@ -37,4 +37,26 @@ angular
 	            Ps.update(document.getElementById('js-body'));
 	        }
         }
+
+        switch($state.current.url.slice(1)) {
+            case 'infographics':
+                $scope.description = 'Andrew\'s infographics';
+                break;
+            case 'interfaces':
+                $scope.description = 'Andrew\'s interfaces';
+                break;
+            default:
+                $scope.description = '?';
+        }
+
+        $scope.$emit('updateMetaData', {
+            'canonical': $state.current.url + '/',
+            'pageTitle': $state.current.url.slice(1).charAt(0).toUpperCase() + $state.current.url.slice(2),
+            'title': $state.current.url.slice(1).charAt(0).toUpperCase() + $state.current.url.slice(2) + ' by Andrew McConville',
+            'description': $scope.description,
+            'image': 'http://andrewmcconville.com/wp-content/uploads/' + $scope.works[0].defaultImage + '-thumbnail.jpg',
+            'name': $state.current.url.slice(1).charAt(0).toUpperCase() + $state.current.url.slice(2),
+            'section': $state.current.url.slice(1).charAt(0).toUpperCase() + $state.current.url.slice(2),
+            'date': $scope.works[0].date
+        });
 	}]);

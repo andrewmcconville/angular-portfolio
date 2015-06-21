@@ -38,7 +38,15 @@ app.config(['$urlRouterProvider', '$stateProvider', '$locationProvider', functio
 }]);
 
 app.controller('appCtrl', ['$rootScope', '$scope', '$state', '$stateParams', function($rootScope, $scope, $state, $stateParams) {
-	
+	$rootScope.metadata = {
+		'title': 'Andrew McConville',
+		'description': 'About Andrew McConville',
+	};
+
+	$scope.$on('updateMetaData', function(event, metadata) {
+		$scope.metadata = metadata;
+	});
+
 	$scope.isDetailsState = false;
 	$scope.menuOpen = false;
 
