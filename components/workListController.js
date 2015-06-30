@@ -1,6 +1,6 @@
 angular
 	.module('portfolio')
-	.controller('workListCtrl', ['$scope', '$state', 'Works', function($scope, $state, Works){
+	.controller('workListCtrl', ['$rootScope', '$scope', '$state', 'Works', function($rootScope, $scope, $state, Works){
 		$scope.category = $state.current.name;
 
 		//if category.details get rid of everythign after the .
@@ -49,7 +49,7 @@ angular
                 $scope.description = '?';
         }
 
-        $scope.$emit('updateMetaData', {
+        $rootScope.metadata = {
             'canonical': $state.current.url + '/',
             'pageTitle': $state.current.url.slice(1).charAt(0).toUpperCase() + $state.current.url.slice(2),
             'title': $state.current.url.slice(1).charAt(0).toUpperCase() + $state.current.url.slice(2) + ' by Andrew McConville',
@@ -58,5 +58,5 @@ angular
             'name': $state.current.url.slice(1).charAt(0).toUpperCase() + $state.current.url.slice(2),
             'section': $state.current.url.slice(1).charAt(0).toUpperCase() + $state.current.url.slice(2),
             'date': $scope.works[0].date
-        });
+        };
 	}]);

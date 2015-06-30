@@ -1,4 +1,16 @@
 <section class="home">
-    Andrew McConville
-    <p>I am an interaction design perfectionist specializing in user interfaces for web, mobile and touch based devices. My background is in web where I believe a great user experience comes from the user-centered design philosophy. I enjoy bridging the gap between code and design, usually in the browser via the latest HTML standards and CSS preprocessors such as LESS and SASS/SCSS.</p>
+    <p>I'm Andrew McConville</p>
+    <p>I'm a designer who spends some of his time coding and a coder who spends most of his time designing.</p>
+    <p>I use frameworks like Angular JS, libraries like jQuery and markup like HTML 5 and CSS 3 (LESS or SASS) to rapidly prototype and build responsive apps.</p>
+    <p>I can pull off fizz buzz:</p>
+    <div ng-init="fizz = 2; buzz = 3">
+        Multiples of <span>{{fizz}}</span> print fizz while multiples of <span>{{buzz}}</span> print buzz
+        <input type="number" min="0" max="9" ng-model="fizz" ng-change="getFizzBuzz(fizz, buzz)"/>
+        and
+        <input type="number" min="0" max="9" ng-model="buzz" ng-change="getFizzBuzz(fizz, buzz)"/>
+        <p ng-repeat="result in fizzBuzz track by $index">{{result}}</p>
+    </div>
+    <p>But if you ask me what a linked list is or to write a custom sorting function because bubbleSort() just ain't cutting it these days I'll promptly team up with a computer scientist because I know when to ask for help vs cooking up some spaghetti code.</p>
+    <p>New site in angular</p>
+    <p>When I'm not hanging out in an IDE I'm dabbling in genealogical research (trying to break the year 1700), roaming the National Parks (it's a tie between Yosemite and the Redwoods) or tweaking computer hardware (I built my own liquid cooled computer).</p>
 </section>

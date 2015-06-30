@@ -1,6 +1,6 @@
 angular
 	.module('portfolio')
-	.controller('detailsCtrl', ['$scope', '$state', '$stateParams', 'Works', function($scope, $state, $stateParams, Works){
+	.controller('detailsCtrl', ['$rootScope', '$scope', '$state', '$stateParams', 'Works', function($rootScope, $scope, $state, $stateParams, Works){
 		$scope.currentWork = Works.getWork($stateParams.url);
 		$scope.previousWorkURL = Works.getPreviousURL($scope.currentWork.index);
 		$scope.nextWorkURL = Works.getNextURL($scope.currentWork.index);
@@ -35,7 +35,7 @@ angular
 			}
 		}
 
-        $scope.$emit('updateMetaData', {
+        $rootScope.metadata = {
             'canonical': '/' + $scope.work.category + 's/' + $scope.work.url + '/',
             'pageTitle': $scope.work.name,
             'title': $scope.work.name + ' by Andrew McConville',
@@ -44,5 +44,5 @@ angular
             'name': $scope.work.name,
             'section': $scope.work.category,
             'date': $scope.work.date
-        });
+        };
 	}]);

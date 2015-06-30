@@ -313,11 +313,12 @@ angular
                         if(allWorks[i].category === category){
                             works.push(allWorks[i]);
                         }
-
                     }
+                    return works;
+                } else {
+                    return allWorks;
                 }
 
-                return works;
             }
         }
     });
