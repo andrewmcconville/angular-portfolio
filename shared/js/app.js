@@ -7,7 +7,7 @@ app.config(['$urlRouterProvider', '$stateProvider', '$locationProvider', functio
 	$stateProvider
 		.state('home', {
 			url: '/',
-			templateUrl: 'components/homeTemplate.html',
+			templateUrl: '/angular-portfolio/components/homeTemplate.html',
 			controller: 'homeCtrl'
 		})
 		// .state('resume', {
@@ -15,27 +15,27 @@ app.config(['$urlRouterProvider', '$stateProvider', '$locationProvider', functio
 		// })
 		.state('interface', {
 			url: '/interfaces',
-			templateUrl: 'components/workListTemplate.html',
+			templateUrl: '/angular-portfolio/components/workListTemplate.html',
 			controller: 'workListCtrl'
 		})
 		.state('infographic', {
 			url: '/infographics',
-			templateUrl: 'components/workListTemplate.html',
+			templateUrl: '/angular-portfolio/components/workListTemplate.html',
 			controller: 'workListCtrl'
 		})
 		.state('interface.details', {
 			url: '/:url',
-			templateUrl: 'components/detailsTemplate.html',
+			templateUrl: '/angular-portfolio/components/detailsTemplate.html',
 			controller: 'detailsCtrl'
 		})
 		.state('infographic.details', {
 			url: '/:url',
-			templateUrl: 'components/detailsTemplate.html',
+			templateUrl: '/angular-portfolio/components/detailsTemplate.html',
 			controller: 'detailsCtrl'
 		});
 
-	//$locationProvider.html5Mode(true);
-	//$locationProvider.hashPrefix('!');
+	// $locationProvider.html5Mode(true);
+	// $locationProvider.hashPrefix('!');
 }]);
 
 app.controller('appCtrl', ['$rootScope', '$scope', '$state', '$stateParams', function($rootScope, $scope, $state, $stateParams) {
