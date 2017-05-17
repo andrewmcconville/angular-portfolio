@@ -8,7 +8,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <style>*{box-sizing:border-box;}body{margin:0;}.ng-cloak{display: none !important;}a,button{outline:0;padding:0;}h1,h2,h3,h4,h5,h6,p,a,img,article,aside,figure,figcaption,footer,header,menu,nav,section,summary,time,ul{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block}ol,ul{list-style:none}</style>
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="/angular-portfolio/shared/css/style.css">
+    <link rel="stylesheet" type="text/css" href="shared/css/style.css">
 
     <title>Andrew McConville | {{metadata.pageTitle}}</title>
     
@@ -47,7 +47,7 @@
     <header class="app-header" ng-class="{'hidden-on-mobile': isDetailsState}">
         <div class="toolbar">
             <button class="button button-secondary" ng-click="menuOpen = true; $event.stopPropagation();">
-                <svg class="icon icon-menu" ng-class="{'spin': menuOpen}"><use xlink:href="/angular-portfolio/shared/icon-sprite.svg#icon-menu"></use></svg>
+                <svg class="icon icon-menu" ng-class="{'spin': menuOpen}"><use xlink:href="shared/icon-sprite.svg#icon-menu"></use></svg>
             </button>
             <div class="title">
                 <a ui-sref="home">Andrew McConville</a>
@@ -64,7 +64,7 @@
 
     <nav class="app-menu ng-cloak" ng-show="menuOpen">
         <button class="button button-secondary button-back" ng-click="menuOpen = false">
-            <svg class="icon icon-arrow" ng-class="{'spin': menuOpen}"><use xlink:href="/angular-portfolio/shared/icon-sprite.svg#icon-arrow"></use></svg>
+            <svg class="icon icon-arrow" ng-class="{'spin': menuOpen}"><use xlink:href="shared/icon-sprite.svg#icon-arrow"></use></svg>
         </button>
         <ul class="menu-links" ng-class="{'stager': menuOpen}">
             <li class="menu-li">
@@ -94,17 +94,17 @@
         </ul>
     </nav>
 
-    <script src="/angular-portfolio/shared/js/libs/imagesloaded.pkgd.min.js"></script>
-    <script src="/angular-portfolio/shared/js/libs/angular.min.js"></script>
-    <script src="/angular-portfolio/shared/js/libs/angular-ui-router.min.js"></script>
-    <script src="/angular-portfolio/shared/js/libs/angular-animate.min.js"></script>
-    <script src="/angular-portfolio/shared/js/libs/fastclick.js"></script>
-    <script src="/angular-portfolio/shared/js/libs/perfect-scrollbar.min.js"></script>
-    <script src="/angular-portfolio/shared/js/app.js"></script>
-    <script src="/angular-portfolio/shared/js/appServices.js"></script>
-    <script src="/angular-portfolio/components/homeController.js"></script>
-    <script src="/angular-portfolio/components/detailsController.js"></script>
-    <script src="/angular-portfolio/components/workListController.js"></script>
+    <script src="shared/js/libs/imagesloaded.pkgd.min.js"></script>
+    <script src="shared/js/libs/angular.min.js"></script>
+    <script src="shared/js/libs/angular-ui-router.min.js"></script>
+    <script src="shared/js/libs/angular-animate.min.js"></script>
+    <script src="shared/js/libs/fastclick.js"></script>
+    <script src="shared/js/libs/perfect-scrollbar.min.js"></script>
+    <script src="shared/js/app.js"></script>
+    <script src="shared/js/appServices.js"></script>
+    <script src="components/homeController.js"></script>
+    <script src="components/detailsController.js"></script>
+    <script src="components/workListController.js"></script>
     <script type="text/javascript">
         if('addEventListener' in document){
             document.addEventListener('DOMContentLoaded', function(){

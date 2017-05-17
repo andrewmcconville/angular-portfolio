@@ -13,9 +13,9 @@ var port = process.env.PORT || 8080;
 app.use(express.static(__dirname + '/'));
 
 // all URLs go to index so angular can run first
-app.get('*', function (req, res) {
-    res.sendFile(__dirname + '/index.html');
-});
+// app.get('*', function (req, res) {
+//     res.sendFile(__dirname + '/index.html');
+// });
 
 // terminal message
 app.listen(port, function() {

@@ -7,7 +7,7 @@ app.config(['$urlRouterProvider', '$stateProvider', '$locationProvider', functio
 	$stateProvider
 		.state('home', {
 			url: '/',
-			templateUrl: '/angular-portfolio/components/homeTemplate.html',
+			templateUrl: 'components/homeTemplate.html',
 			controller: 'homeCtrl'
 		})
 		// .state('resume', {
@@ -15,22 +15,22 @@ app.config(['$urlRouterProvider', '$stateProvider', '$locationProvider', functio
 		// })
 		.state('interface', {
 			url: '/interfaces',
-			templateUrl: '/angular-portfolio/components/workListTemplate.html',
+			templateUrl: 'components/workListTemplate.html',
 			controller: 'workListCtrl'
 		})
 		.state('infographic', {
 			url: '/infographics',
-			templateUrl: '/angular-portfolio/components/workListTemplate.html',
+			templateUrl: 'components/workListTemplate.html',
 			controller: 'workListCtrl'
 		})
 		.state('interface.details', {
 			url: '/:url',
-			templateUrl: '/angular-portfolio/components/detailsTemplate.html',
+			templateUrl: 'components/detailsTemplate.html',
 			controller: 'detailsCtrl'
 		})
 		.state('infographic.details', {
 			url: '/:url',
-			templateUrl: '/angular-portfolio/components/detailsTemplate.html',
+			templateUrl: 'components/detailsTemplate.html',
 			controller: 'detailsCtrl'
 		});
 
